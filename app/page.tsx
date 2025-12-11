@@ -2,7 +2,6 @@ import LoopSyncNavbar from "@/components/LoopSyncNavbar"
 import ProblemWakeUp from "@/components/ProblemWakeUp"
 import CTASection from "@/components/CTASection"
 import IPhoneDemoSection from "@/components/IPhoneDemoSection"
-import ThreeVoicesSection from "@/components/ThreeVoicesSection"
 import WhySMSSection from "@/components/WhySMSSection"
 import HowItWorksSection from "@/components/HowItWorksSection"
 import ClosedLoopTracker from "@/components/ClosedLoopTracker"
@@ -21,7 +20,6 @@ export default function Page() {
       <ProblemWakeUp />
       <CTASection />
       <IPhoneDemoSection />
-      <ThreeVoicesSection />
       <WhySMSSection />
       <HowItWorksSection />
       <ClosedLoopTracker />

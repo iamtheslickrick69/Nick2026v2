@@ -161,8 +161,29 @@ export default function AIChatbot() {
             whileHover={{ scale: 1.15 }}
             whileTap={{ scale: 0.95 }}
             onClick={() => setIsOpen(true)}
-            className="fixed bottom-6 right-6 w-16 h-16 rounded-full bg-gradient-to-br from-[#E07850] via-[#1B7F8E] to-[#06b6d4] animate-pulse shadow-2xl z-50 cursor-pointer"
-          />
+            className="fixed bottom-6 right-6 w-16 h-16 rounded-full shadow-2xl z-50 cursor-pointer overflow-hidden"
+          >
+            {/* Animated Gradient Orb (matching navbar logo) */}
+            <motion.div
+              className="absolute inset-0 rounded-full"
+              style={{
+                background: "conic-gradient(from 0deg, #E07850, #1B7F8E, #06b6d4, #E07850)",
+              }}
+              animate={{ rotate: 360 }}
+              transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
+            />
+            {/* Inner white circle */}
+            <div className="absolute inset-1 bg-white rounded-full" />
+            {/* Inner gradient */}
+            <motion.div
+              className="absolute inset-2 rounded-full"
+              style={{
+                background: "conic-gradient(from 180deg, #E07850, #1B7F8E, #06b6d4, #E07850)",
+              }}
+              animate={{ rotate: -360 }}
+              transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
+            />
+          </motion.button>
         )}
       </AnimatePresence>
 
@@ -181,7 +202,26 @@ export default function AIChatbot() {
             {/* Header */}
             <div className="p-4 border-b border-[#E5E5E5] bg-gradient-to-r from-[#E07850] to-[#1B7F8E] flex items-center justify-between">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#E07850] via-[#1B7F8E] to-[#06b6d4] animate-pulse" />
+                {/* Animated Gradient Orb */}
+                <div className="relative w-10 h-10 rounded-full overflow-hidden flex-shrink-0">
+                  <motion.div
+                    className="absolute inset-0 rounded-full"
+                    style={{
+                      background: "conic-gradient(from 0deg, #E07850, #1B7F8E, #06b6d4, #E07850)",
+                    }}
+                    animate={{ rotate: 360 }}
+                    transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
+                  />
+                  <div className="absolute inset-0.5 bg-white rounded-full" />
+                  <motion.div
+                    className="absolute inset-1 rounded-full"
+                    style={{
+                      background: "conic-gradient(from 180deg, #E07850, #1B7F8E, #06b6d4, #E07850)",
+                    }}
+                    animate={{ rotate: -360 }}
+                    transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
+                  />
+                </div>
                 <div>
                   <h3 className="text-base font-bold text-white">Coro AI</h3>
                   <p className="text-xs text-white/80">Your LoopSync Assistant</p>

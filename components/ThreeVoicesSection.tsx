@@ -254,33 +254,40 @@ export default function ThreeVoicesSection() {
             />
 
             {/* Flowing particles on lines */}
-            {[0, 1, 2, 3, 4, 5].map((i) => (
-              <motion.circle
-                key={i}
-                r="4"
-                fill={i < 2 ? "#10b981" : i < 4 ? "#a855f7" : "#3b82f6"}
-                initial={{ opacity: 0 }}
-                animate={{
-                  opacity: [0, 0.8, 0.8, 0],
-                }}
-                transition={{
-                  duration: 4,
-                  repeat: Number.POSITIVE_INFINITY,
-                  delay: i * 0.7,
-                  ease: "linear",
-                }}
-                style={{
-                  offsetPath:
-                    i < 2
-                      ? "path('M 140 480 L 290 120')"
-                      : i < 4
-                        ? "path('M 460 480 L 310 120')"
-                        : "path('M 160 500 L 440 500')",
-                  offsetRotate: "0deg",
-                  offsetDistance: "0%",
-                }}
-              />
-            ))}
+            {[
+              // Employee to Executive line particles
+              { x1: 140, y1: 480, x2: 290, y2: 120, fill: "#10b981" },
+              { x1: 140, y1: 480, x2: 290, y2: 120, fill: "#10b981" },
+              // Customer to Executive line particles
+              { x1: 460, y1: 480, x2: 310, y2: 120, fill: "#a855f7" },
+              { x1: 460, y1: 480, x2: 310, y2: 120, fill: "#a855f7" },
+              // Employee to Customer line particles
+              { x1: 160, y1: 500, x2: 440, y2: 500, fill: "#3b82f6" },
+              { x1: 160, y1: 500, x2: 440, y2: 500, fill: "#3b82f6" },
+            ].map((particle, i) => {
+              const progress = i * 0.7
+              return (
+                <motion.circle
+                  key={i}
+                  r="4"
+                  fill={particle.fill}
+                  cx={particle.x1}
+                  cy={particle.y1}
+                  initial={{ opacity: 0 }}
+                  animate={{
+                    cx: [particle.x1, particle.x2],
+                    cy: [particle.y1, particle.y2],
+                    opacity: [0, 0.8, 0.8, 0],
+                  }}
+                  transition={{
+                    duration: 4,
+                    repeat: Number.POSITIVE_INFINITY,
+                    delay: progress,
+                    ease: "linear",
+                  }}
+                />
+              )
+            })}
           </svg>
 
           {/* Center Coro Hub */}

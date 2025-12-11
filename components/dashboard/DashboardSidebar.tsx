@@ -160,6 +160,7 @@ function DashboardSidebar() {
                   <li key={item.name}>
                     <Link
                       href={item.href}
+                      onClick={() => setMobileOpen(false)}
                       className={`
                         flex items-center gap-3 px-3 py-2.5 rounded-xl transition-all duration-200
                         ${
@@ -208,6 +209,7 @@ function DashboardSidebar() {
               <li key={item.name}>
                 <Link
                   href={item.href}
+                  onClick={() => setMobileOpen(false)}
                   className={`
                     flex items-center gap-3 px-3 py-2.5 rounded-xl transition-all duration-200
                     ${

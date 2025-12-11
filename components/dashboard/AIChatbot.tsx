@@ -202,25 +202,9 @@ export default function AIChatbot() {
             {/* Header */}
             <div className="p-4 border-b border-[#E5E5E5] bg-gradient-to-r from-[#E07850] to-[#1B7F8E] flex items-center justify-between">
               <div className="flex items-center gap-3">
-                {/* Animated Gradient Orb */}
-                <div className="relative w-10 h-10 rounded-full overflow-hidden flex-shrink-0">
-                  <motion.div
-                    className="absolute inset-0 rounded-full"
-                    style={{
-                      background: "conic-gradient(from 0deg, #E07850, #1B7F8E, #06b6d4, #E07850)",
-                    }}
-                    animate={{ rotate: 360 }}
-                    transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
-                  />
-                  <div className="absolute inset-0.5 bg-white rounded-full" />
-                  <motion.div
-                    className="absolute inset-1 rounded-full"
-                    style={{
-                      background: "conic-gradient(from 180deg, #E07850, #1B7F8E, #06b6d4, #E07850)",
-                    }}
-                    animate={{ rotate: -360 }}
-                    transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
-                  />
+                {/* Sparkles Icon */}
+                <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center flex-shrink-0">
+                  <Sparkles size={20} className="text-white" />
                 </div>
                 <div>
                   <h3 className="text-base font-bold text-white">Coro AI</h3>

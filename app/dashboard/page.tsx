@@ -10,6 +10,8 @@ import RealTimeFeed from "@/components/dashboard/RealTimeFeed"
 import RiskRadarCard from "@/components/dashboard/RiskRadarCard"
 import ActionTrackerFull from "@/components/dashboard/ActionTrackerFull"
 import HealthBreakdown from "@/components/dashboard/HealthBreakdown"
+import QuickActionsBar from "@/components/dashboard/QuickActionsBar"
+import FeedbackDetailPanel from "@/components/dashboard/FeedbackDetailPanel"
 
 export default function DashboardPage() {
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false)
@@ -29,6 +31,9 @@ export default function DashboardPage() {
           title="Dashboard"
           subtitle="Welcome back, John. Your organizational nervous system in real-time."
         />
+
+        {/* Quick Actions Bar */}
+        <QuickActionsBar />
 
         <div className="p-6 space-y-6">
           {/* Top Row: Culture Pulse + Daily Digest */}
@@ -50,6 +55,9 @@ export default function DashboardPage() {
           </div>
         </div>
       </motion.main>
+
+      {/* Feedback Detail Panel (Global) */}
+      <FeedbackDetailPanel />
     </div>
   )
 }

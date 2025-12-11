@@ -19,6 +19,7 @@ import {
   TrendingUp,
   Target,
   FileText,
+  Sparkles,
 } from "lucide-react"
 
 const navItems = [
@@ -27,6 +28,7 @@ const navItems = [
     items: [
       { name: "Dashboard", href: "/dashboard", icon: LayoutDashboard },
       { name: "Coro Insights", href: "/dashboard/insights", icon: MessageSquare },
+      { name: "Coro Analytics", href: "/dashboard/coro-analytics", icon: Sparkles },
     ],
   },
   {

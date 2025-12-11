@@ -1,11 +1,13 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { TrendingUp, TrendingDown } from "lucide-react"
+import { TrendingUp, TrendingDown, ChevronRight } from "lucide-react"
 import { culturePulse } from "@/lib/dashboardData"
+import { useDashboardStore } from "@/lib/dashboardStore"
 
 export default function CulturePulse() {
   const { currentScore, previousScore, change, trend, last7Days } = culturePulse
+  const { setTrendAnalysisModal } = useDashboardStore()
 
   // Calculate max value for sparkline scaling
   const maxValue = Math.max(...last7Days)
@@ -129,11 +131,22 @@ export default function CulturePulse() {
 
       {/* 7-Day Sparkline */}
       <div className="pt-4 border-t border-[#E5E5E5]">
-        <p className="text-xs text-[#666666] mb-3 font-medium">Last 7 Days</p>
+        <div className="flex items-center justify-between mb-3">
+          <p className="text-xs text-[#666666] font-medium">Last 7 Days</p>
+          <button
+            onClick={() => setTrendAnalysisModal(true)}
+            className="flex items-center gap-1 text-xs text-[#1B7F8E] hover:text-[#06b6d4] font-medium transition-colors group"
+          >
+            View Full Trend
+            <ChevronRight size={12} className="group-hover:translate-x-0.5 transition-transform" />
+          </button>
+        </div>
         <motion.svg
           width={width}
           height={height}
-          className="w-full"
+          className="w-full cursor-pointer"
+          onClick={() => setTrendAnalysisModal(true)}
+          whileHover={{ scale: 1.02 }}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.6 }}

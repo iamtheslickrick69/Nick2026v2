@@ -12,6 +12,11 @@ import ActionTrackerFull from "@/components/dashboard/ActionTrackerFull"
 import HealthBreakdownEnhanced from "@/components/dashboard/HealthBreakdownEnhanced"
 import QuickActionsBar from "@/components/dashboard/QuickActionsBar"
 import FeedbackDetailPanel from "@/components/dashboard/FeedbackDetailPanel"
+import GlobalSearch from "@/components/dashboard/GlobalSearch"
+import TrendAnalysisModal from "@/components/dashboard/TrendAnalysisModal"
+import ActionEditorModal from "@/components/dashboard/ActionEditorModal"
+import KeyboardShortcutsOverlay from "@/components/dashboard/KeyboardShortcutsOverlay"
+import AIChatbot from "@/components/dashboard/AIChatbot"
 import { useDashboardStore } from "@/lib/dashboardStore"
 
 export default function DashboardPage() {
@@ -88,6 +93,21 @@ export default function DashboardPage() {
 
       {/* Feedback Detail Panel (Global) */}
       <FeedbackDetailPanel />
+
+      {/* Global Search (Cmd+K) */}
+      <GlobalSearch />
+
+      {/* Trend Analysis Modal */}
+      <TrendAnalysisModal />
+
+      {/* Action Editor Modal */}
+      <ActionEditorModal />
+
+      {/* Keyboard Shortcuts Overlay */}
+      <KeyboardShortcutsOverlay />
+
+      {/* AI Chatbot (Floating) */}
+      <AIChatbot />
     </div>
   )
 }

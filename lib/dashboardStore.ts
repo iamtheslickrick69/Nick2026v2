@@ -42,15 +42,18 @@ export interface SelectedRisk {
 }
 
 export interface ActionItem {
-  id: string
-  title: string
-  status: "pending" | "in_progress" | "completed"
-  owner: string
-  dueDate: Date
-  progress: number
-  relatedMessages: number
+  id?: string
+  title?: string
+  description?: string
+  status?: "not_started" | "in_progress" | "completed"
+  owner?: string
+  dueDate?: Date
+  priority?: "low" | "medium" | "high" | "critical"
+  progress?: number
+  relatedMessages?: number
   impact?: string
   notes?: string
+  linkedFeedback?: string
 }
 
 interface DashboardStore {
@@ -75,8 +78,8 @@ interface DashboardStore {
   riskDetailExpanded: string | null // risk ID
   setRiskDetailExpanded: (riskId: string | null) => void
 
-  actionEditorModal: ActionItem | null
-  setActionEditorModal: (action: ActionItem | null) => void
+  actionEditorModal: { action?: ActionItem } | null
+  setActionEditorModal: (modal: { action?: ActionItem } | null) => void
 
   trendAnalysisModal: boolean
   setTrendAnalysisModal: (open: boolean) => void
@@ -158,7 +161,7 @@ export const useDashboardStore = create<DashboardStore>((set) => ({
   // Modals/Panels
   setFeedbackDetailPanel: (feedback) => set({ feedbackDetailPanel: feedback }),
   setRiskDetailExpanded: (riskId) => set({ riskDetailExpanded: riskId }),
-  setActionEditorModal: (action) => set({ actionEditorModal: action }),
+  setActionEditorModal: (modal) => set({ actionEditorModal: modal }),
   setTrendAnalysisModal: (open) => set({ trendAnalysisModal: open }),
 
   // Search

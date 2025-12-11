@@ -12,6 +12,7 @@ import SecuritySection from "@/components/SecuritySection"
 import FounderSection from "@/components/FounderSection"
 import LoopSyncFAQSection from "@/components/LoopSyncFAQSection"
 import LoopSyncFooter from "@/components/LoopSyncFooter"
+import AIChatbot from "@/components/dashboard/AIChatbot"
 
 export default function Page() {
   return (
@@ -30,6 +31,9 @@ export default function Page() {
       <FounderSection />
       <LoopSyncFAQSection />
       <LoopSyncFooter />
+
+      {/* AI Chatbot (Floating) */}
+      <AIChatbot />
     </>
   )
 }

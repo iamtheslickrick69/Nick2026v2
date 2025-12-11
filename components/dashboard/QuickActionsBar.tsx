@@ -5,7 +5,7 @@ import { Plus, Calendar, FileText, Bell, AlertCircle, Clock } from "lucide-react
 import { useDashboardStore } from "@/lib/dashboardStore"
 
 export default function QuickActionsBar() {
-  const { unaddressedCriticalCount, actionsDueThisWeek } = useDashboardStore()
+  const { unaddressedCriticalCount, actionsDueThisWeek, setActionEditorModal } = useDashboardStore()
 
   return (
     <motion.div
@@ -18,6 +18,7 @@ export default function QuickActionsBar() {
         {/* Left: Quick Actions */}
         <div className="flex items-center gap-3">
           <motion.button
+            onClick={() => setActionEditorModal({})}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="flex items-center gap-2 px-4 py-2 rounded-xl bg-gradient-to-r from-[#E07850] to-[#d96a3f] text-white font-semibold text-sm shadow-md hover:shadow-lg transition-all"

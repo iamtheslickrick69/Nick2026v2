@@ -50,12 +50,26 @@ const stats = [
 export default function ClosedLoopTracker() {
   return (
     <section className="relative py-20 md:py-32 overflow-hidden">
-      {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-white via-blue-50/30 to-white" />
+      {/* Video Background */}
+      <div className="absolute inset-0 w-full h-full overflow-hidden">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+          style={{ pointerEvents: "none" }}
+        >
+          <source src="https://pub-7824dae2ffd24193b52760c54972be1d.r2.dev/111peachbaby.mp4" type="video/mp4" />
+        </video>
+      </div>
+
+      {/* Overlay for readability */}
+      <div className="absolute inset-0 bg-gradient-to-b from-white/85 via-white/75 to-white/85" />
 
       {/* Dot pattern overlay */}
       <div
-        className="absolute inset-0 opacity-30"
+        className="absolute inset-0 opacity-20"
         style={{
           backgroundImage: "radial-gradient(circle at 2px 2px, rgba(224,120,80,0.1) 1px, transparent 0)",
           backgroundSize: "40px 40px",
@@ -82,7 +96,8 @@ export default function ClosedLoopTracker() {
             whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#202020] mb-6"
+            className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#202020] mb-6 leading-tight"
+            style={{ textShadow: "0 2px 8px rgba(255,255,255,0.5)" }}
           >
             The Only Platform That Proves Leadership Acted
           </motion.h2>
@@ -93,7 +108,8 @@ export default function ClosedLoopTracker() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-xl text-[#666666] max-w-3xl mx-auto"
+            className="text-xl md:text-2xl text-[#666666] max-w-3xl mx-auto font-medium"
+            style={{ textShadow: "0 2px 4px rgba(255,255,255,0.8)" }}
           >
             Every concern tracked. Every action logged. Every employee heard.
           </motion.p>
@@ -128,30 +144,35 @@ export default function ClosedLoopTracker() {
                   {index + 1}
                 </div>
 
-                {/* Icon Circle */}
+                {/* Minimalist Icon Circle */}
                 <motion.div
-                  whileHover={{ scale: 1.1, rotate: 5 }}
-                  className={`relative w-24 h-24 rounded-2xl bg-gradient-to-br ${step.gradient} flex items-center justify-center mb-6 shadow-lg group cursor-pointer`}
+                  whileHover={{ scale: 1.05, y: -4 }}
+                  className="relative w-20 h-20 rounded-2xl bg-white/70 backdrop-blur-sm border-2 flex items-center justify-center mb-6 shadow-lg group cursor-pointer transition-all"
+                  style={{
+                    borderColor: step.color,
+                    boxShadow: `0 4px 24px -4px ${step.color}40`,
+                  }}
                 >
-                  {/* Pulsing Glow */}
-                  <motion.div
-                    animate={{
-                      opacity: [0.5, 0.8, 0.5],
-                      scale: [1, 1.1, 1],
+                  {/* Subtle glow on hover */}
+                  <div
+                    className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                    style={{
+                      background: `linear-gradient(135deg, ${step.color}10, ${step.color}20)`,
                     }}
-                    transition={{
-                      duration: 2,
-                      repeat: Number.POSITIVE_INFINITY,
-                      delay: index * 0.3,
-                    }}
-                    className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${step.gradient} blur-xl opacity-50`}
                   />
-                  <step.icon className="w-12 h-12 text-white relative z-10" strokeWidth={2} />
+                  <step.icon className="relative z-10" size={32} strokeWidth={1.5} style={{ color: step.color }} />
                 </motion.div>
 
                 {/* Content */}
-                <h3 className="text-lg font-bold text-[#202020] mb-2">{step.title}</h3>
-                <p className="text-sm text-[#666666]">{step.description}</p>
+                <h3
+                  className="text-lg font-bold text-[#202020] mb-2"
+                  style={{ textShadow: "0 2px 4px rgba(255,255,255,0.9)" }}
+                >
+                  {step.title}
+                </h3>
+                <p className="text-sm text-[#666666] font-medium" style={{ textShadow: "0 1px 2px rgba(255,255,255,0.8)" }}>
+                  {step.description}
+                </p>
 
                 {/* Arrow to next (desktop, not on last) */}
                 {index < steps.length - 1 && (
@@ -177,8 +198,8 @@ export default function ClosedLoopTracker() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: 1.2 + index * 0.1 }}
-              whileHover={{ y: -4, boxShadow: "0 12px 24px -8px rgba(0,0,0,0.1)" }}
-              className="bg-white border border-[#E5E5E5] rounded-2xl p-6 text-center shadow-sm transition-all"
+              whileHover={{ y: -4, boxShadow: "0 16px 32px -8px rgba(0,0,0,0.15)" }}
+              className="bg-white/90 backdrop-blur-md border border-[#E5E5E5] rounded-2xl p-6 text-center shadow-lg transition-all"
             >
               <div className="text-4xl font-bold text-[#E07850] mb-2">{stat.value}</div>
               <div className="text-sm font-semibold text-[#202020] mb-1">{stat.label}</div>
@@ -195,13 +216,15 @@ export default function ClosedLoopTracker() {
           transition={{ duration: 0.6, delay: 1.5 }}
           className="mt-12 text-center"
         >
-          <div className="inline-flex items-center gap-3 px-8 py-4 rounded-2xl bg-gradient-to-r from-blue-500/10 to-purple-500/10 border border-blue-500/20">
+          <div className="inline-flex items-center gap-3 px-8 py-4 rounded-2xl bg-white/80 backdrop-blur-md border-2 border-blue-500/30 shadow-lg">
             <Lock className="w-6 h-6 text-blue-600" />
             <div className="text-left">
               <div className="text-sm font-bold text-[#202020]">
                 Competitors collect feedback. We prove it was acted on.
               </div>
-              <div className="text-xs text-[#666666] mt-1">Culture Amp, 15Five, and Lattice can't do this.</div>
+              <div className="text-xs text-[#666666] mt-1 font-medium">
+                Culture Amp, 15Five, and Lattice can't do this.
+              </div>
             </div>
           </div>
         </motion.div>

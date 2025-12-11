@@ -6,10 +6,14 @@ import { ArrowUp } from "lucide-react"
 export default function IPhoneDemoSection() {
   return (
     <section className="relative py-20 md:py-32 overflow-hidden">
-      {/* Video Background */}
+      {/* Colorful gradient background */}
       <div className="absolute inset-0 w-full h-full">
-        {/* Placeholder gradient background (replace with video) */}
-        <div className="absolute inset-0 w-full h-full bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900" />
+        {/* Subtle brand color gradient */}
+        <div className="absolute inset-0 w-full h-full bg-gradient-to-br from-[#1B7F8E] via-[#2d5a66] to-[#3a3a3a]" />
+
+        {/* Accent gradient overlay for depth */}
+        <div className="absolute inset-0 w-full h-full bg-gradient-to-tr from-[#E07850]/10 via-transparent to-[#06b6d4]/10" />
+
         {/* Uncomment below for actual video */}
         {/* <video
           autoPlay
@@ -23,8 +27,8 @@ export default function IPhoneDemoSection() {
         </video> */}
       </div>
 
-      {/* Dark overlay for text readability */}
-      <div className="absolute inset-0 bg-black/50" />
+      {/* Lighter overlay for text readability */}
+      <div className="absolute inset-0 bg-black/30" />
 
       {/* Content */}
       <div className="container mx-auto px-6 relative z-10">

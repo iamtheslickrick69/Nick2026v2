@@ -16,8 +16,8 @@ export default function Page() {
     <>
       <LoopSyncNavbar />
       <ProblemWakeUp />
-      <IPhoneDemoSection />
       <WhySMSSection />
+      <IPhoneDemoSection />
       <HowItWorksSection />
       <UseCasesSection />
       <FeaturesSection />

@@ -20,6 +20,8 @@ import {
   Target,
   FileText,
   Sparkles,
+  Menu,
+  X,
 } from "lucide-react"
 
 const navItems = [
@@ -57,15 +59,42 @@ const bottomItems = [
 
 function DashboardSidebar() {
   const [collapsed, setCollapsed] = useState(false)
+  const [mobileOpen, setMobileOpen] = useState(false)
   const pathname = usePathname()
 
   return (
-    <motion.aside
-      initial={false}
-      animate={{ width: collapsed ? 80 : 260 }}
-      transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
-      className="fixed left-0 top-0 h-screen bg-white border-r border-[#E5E5E5] flex flex-col z-40"
-    >
+    <>
+      {/* Mobile hamburger button */}
+      <button
+        onClick={() => setMobileOpen(!mobileOpen)}
+        className="lg:hidden fixed top-4 left-4 z-50 p-2 rounded-lg bg-white border border-[#E5E5E5] shadow-lg"
+      >
+        {mobileOpen ? <X size={24} /> : <Menu size={24} />}
+      </button>
+
+      {/* Mobile overlay */}
+      <AnimatePresence>
+        {mobileOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setMobileOpen(false)}
+            className="lg:hidden fixed inset-0 bg-black/50 z-30"
+          />
+        )}
+      </AnimatePresence>
+
+      {/* Sidebar */}
+      <motion.aside
+        initial={false}
+        animate={{
+          width: collapsed ? 80 : 260,
+          x: mobileOpen ? 0 : -260,
+        }}
+        transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
+        className="fixed left-0 top-0 h-screen bg-white border-r border-[#E5E5E5] flex flex-col z-40 lg:translate-x-0"
+      >
       {/* Logo */}
       <div className="h-16 flex items-center justify-between px-4 border-b border-[#E5E5E5]">
         <Link href="/" className="flex items-center gap-3">
@@ -245,6 +274,7 @@ function DashboardSidebar() {
         </div>
       </div>
     </motion.aside>
+    </>
   )
 }
 

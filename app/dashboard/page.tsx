@@ -17,6 +17,7 @@ import TrendAnalysisModal from "@/components/dashboard/TrendAnalysisModal"
 import ActionEditorModal from "@/components/dashboard/ActionEditorModal"
 import KeyboardShortcutsOverlay from "@/components/dashboard/KeyboardShortcutsOverlay"
 import AIChatbot from "@/components/dashboard/AIChatbot"
+import DemoModeBadge from "@/components/dashboard/DemoModeBadge"
 import { useDashboardStore } from "@/lib/dashboardStore"
 
 export default function DashboardPage() {
@@ -26,6 +27,7 @@ export default function DashboardPage() {
   return (
     <div className="min-h-screen bg-[#F8F7F4]">
       <DashboardSidebar />
+      <DemoModeBadge />
 
       <motion.main
         initial={false}

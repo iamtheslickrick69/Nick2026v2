@@ -7,17 +7,17 @@ const cards = [
   {
     icon: Smartphone,
     title: "Not Another App",
-    body: "No app fatigue. No passwords. Coro meets employees in their native messaging app. Zero friction, maximum participation.",
+    body: "No app fatigue. No passwords. Coro meets employees and customers in their native messaging app. Zero friction, maximum participation.",
   },
   {
     icon: Zap,
     title: "98% Open Rate",
-    body: "SMS gets read within 3 minutes on average. When employees text Coro, they're not adding work. They're just texting.",
+    body: "SMS gets read within 3 minutes on average. When anyone texts Coro, they're not adding work. They're just texting.",
   },
   {
     icon: Users,
     title: "True Accessibility",
-    body: "Everyone has a phone. SMS reaches your entire workforce — warehouse, remote, frontline, corporate. No one left out.",
+    body: "Everyone has a phone. SMS reaches your entire workforce AND customer base — warehouse, remote, frontline, corporate, or customer. No one left out.",
   },
 ]
 

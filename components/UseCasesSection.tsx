@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { AlertTriangle, TrendingDown, UserX, MessageCircle, XCircle, CheckCircle, MoveHorizontal } from "lucide-react"
+import { AlertTriangle, TrendingDown, UserX, MessageCircle, XCircle, CheckCircle, MoveHorizontal, UserMinus } from "lucide-react"
 
 const useCases = [
   {
@@ -79,6 +79,24 @@ const useCases = [
       solutions: ["Visible progress", "Closed-loop system", "Accountability tracking", "Trust rebuilt"],
     },
   },
+  {
+    icon: UserMinus,
+    title: "Customer Churn",
+    before: {
+      title: "Without LoopSync",
+      description: "Customers quietly churn. Exit surveys reveal problems too late. Your support team filters bad news from leadership.",
+      stat: "$100K+",
+      statLabel: "Average customer lifetime value lost",
+      problems: ["Silent churn signals", "Filtered feedback", "No early warning", "Lost revenue blindness"],
+    },
+    after: {
+      title: "With LoopSync",
+      description: "Customers text honest feedback directly to leadership. Problems surface before churn. Retention interventions work.",
+      stat: "3 weeks",
+      statLabel: "Earlier churn detection",
+      solutions: ["Direct customer channel", "Unfiltered truth", "Proactive retention", "Revenue protection"],
+    },
+  },
 ]
 
 export default function UseCasesSection() {
@@ -133,7 +151,7 @@ export default function UseCasesSection() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="text-lg text-[#666666] max-w-3xl mx-auto"
           >
-            {"These aren't hypotheticals. These are the problems that keep HR leaders up at night."}
+            {"These aren't hypotheticals. These are the crises that keep executives up at night — from toxic culture to customer churn."}
           </motion.p>
         </div>
 

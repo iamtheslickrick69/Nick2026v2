@@ -114,8 +114,7 @@ export default function ProblemWakeUp({ onOpenContact, onOpenCalculator }: Probl
           transition={{ duration: 0.6, ease: [0.1, 0, 0.1, 1], delay: 0.3 }}
           className="text-center text-lg md:text-xl text-[#666666] max-w-3xl mx-auto mb-16"
         >
-          The employees who quit never told you why. The harassment victim never reported it. You can&apos;t fix what
-          you can&apos;t see.
+          The employees who quit never told you why. The customers who churned stayed silent. The harassment victim never reported it. You can&apos;t fix what you can&apos;t see.
         </motion.p>
 
         <motion.div

@@ -69,10 +69,10 @@ function NodeComponent({ position, icon: Icon, title, subtitle, metric, color, g
 const cards = [
   {
     icon: MessageSquare,
-    title: "Employees Text Coro",
+    title: "Employees: Voice Without Fear",
     description:
-      "Share feedback instantly via SMS. No apps. No logins. No friction. Just honest conversation — completely anonymous.",
-    example: 'Example: "I\'m burned out but afraid to say it" → Coro receives instantly',
+      "Share feedback instantly via SMS. No apps. No logins. No friction. Complete anonymity with granular privacy controls. Your voice matters without risking your career.",
+    example: 'Example: "I\'m burned out but afraid to say it" → Coro receives instantly → Protected forever',
     color: "emerald",
     gradient: "from-emerald-500 to-emerald-600",
     bgLight: "from-emerald-50 to-emerald-100/50",
@@ -82,10 +82,10 @@ const cards = [
   },
   {
     icon: BarChart3,
-    title: "Leaders See the Truth",
+    title: "Executives: Truth Without Politics",
     description:
-      "Real-time visibility into sentiment, blind spots, and emerging risks. Act before problems become crises.",
-    example: 'Dashboard shows: "3 teams reporting burnout pattern" → Leaders see aggregated insights',
+      "Real-time visibility into sentiment, blind spots, and emerging risks across employees AND customers. See reality before it becomes a crisis. Act with confidence.",
+    example: 'Dashboard shows: "3 teams reporting burnout + 12 customers mentioning competitor" → Complete intelligence',
     color: "blue",
     gradient: "from-blue-500 to-blue-600",
     bgLight: "from-blue-50 to-blue-100/50",
@@ -95,10 +95,10 @@ const cards = [
   },
   {
     icon: QrCode,
-    title: "Customers Contribute",
+    title: "Customers: Channel Without Hostility",
     description:
-      "QR-enabled feedback flows into the same system. External signal meets internal truth — complete organizational clarity.",
-    example: "Customer scans QR code → Feedback joins the loop → Complete picture emerges",
+      "QR-enabled feedback flows into the same neutral system. Tell leadership the truth without threatening to leave. External signal meets internal truth — complete organizational clarity.",
+    example: 'Customer scans QR: "Your support team is hiding problems" → Leadership sees it → Action taken',
     color: "purple",
     gradient: "from-purple-500 to-purple-600",
     bgLight: "from-purple-50 to-purple-100/50",
@@ -136,7 +136,7 @@ export default function ThreeVoicesSection() {
             transition={{ duration: 0.5 }}
             className="block text-xs font-semibold text-[#E07850] uppercase tracking-widest mb-3 font-mono"
           >
-            THE SYSTEM
+            THE TRIANGLE OF TRUST
           </motion.span>
 
           {/* Headline */}
@@ -147,7 +147,7 @@ export default function ThreeVoicesSection() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#202020] mb-4"
           >
-            Three Voices. One Trust System.
+            Every Voice Protected. Every Truth Delivered.
           </motion.h2>
 
           {/* Subheadline */}
@@ -158,7 +158,7 @@ export default function ThreeVoicesSection() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="text-xl text-[#666666]"
           >
-            Watch feedback flow from silent concerns to executive action in real-time
+            Employees speak without fear. Customers share without hostility. Executives see truth through one neutral AI escrow.
           </motion.p>
         </div>
 
@@ -312,7 +312,7 @@ export default function ThreeVoicesSection() {
               <Sparkles className="w-10 h-10 text-white" strokeWidth={2} />
             </motion.div>
             <span className="text-xs font-semibold text-[#666666] bg-white px-3 py-1 rounded-full border border-gray-200 shadow-sm">
-              Powered by Coro
+              Coro AI Escrow
             </span>
           </motion.div>
 
@@ -419,7 +419,7 @@ export default function ThreeVoicesSection() {
             whileTap={{ scale: 0.95 }}
             className="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-xl shadow-xl hover:shadow-2xl transition-all flex items-center gap-2 mx-auto group"
           >
-            See It Live
+            See the Triangle in Action
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </motion.button>
         </motion.div>

@@ -259,10 +259,8 @@ export default function ThreeVoicesSection() {
                 key={i}
                 r="4"
                 fill={i < 2 ? "#10b981" : i < 4 ? "#a855f7" : "#3b82f6"}
-                opacity="0.8"
-                initial={{ offsetDistance: "0%", opacity: 0 }}
+                initial={{ opacity: 0 }}
                 animate={{
-                  offsetDistance: ["0%", "100%"],
                   opacity: [0, 0.8, 0.8, 0],
                 }}
                 transition={{
@@ -279,6 +277,7 @@ export default function ThreeVoicesSection() {
                         ? "path('M 460 480 L 310 120')"
                         : "path('M 160 500 L 440 500')",
                   offsetRotate: "0deg",
+                  offsetDistance: "0%",
                 }}
               />
             ))}

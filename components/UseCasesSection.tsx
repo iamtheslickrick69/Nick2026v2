@@ -171,7 +171,7 @@ export default function UseCasesSection() {
           <div className="relative bg-white border-2 border-[#E5E5E5] rounded-3xl overflow-hidden shadow-2xl">
             {/* Slider Container */}
             <div className="relative" style={{ height: "480px" }}>
-              <AnimatePresence mode="wait">
+              <AnimatePresence>
                 {/* BEFORE Side (Left) - Red */}
                 <motion.div
                   key={`before-${activeIndex}`}

@@ -32,20 +32,25 @@ const securityFeatures = [
 
 export function SecuritySection() {
   return (
-    <section className="relative py-24 px-6 md:px-8 bg-white overflow-hidden">
-      {/* Subtle dot pattern overlay */}
-      <div
-        className="absolute inset-0 opacity-[0.03]"
-        style={{
-          backgroundImage: `radial-gradient(circle at 1px 1px, #1B7F8E 1px, transparent 0)`,
-          backgroundSize: "24px 24px",
-        }}
-      />
+    <section className="relative py-16 px-6 md:px-8 overflow-hidden">
+      {/* Video Background */}
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover"
+      >
+        <source src="https://pub-7824dae2ffd24193b52760c54972be1d.r2.dev/111peachbaby.mp4" type="video/mp4" />
+      </video>
+
+      {/* 25% Dark Overlay */}
+      <div className="absolute inset-0 bg-black/25" />
 
       <div className="relative max-w-6xl mx-auto">
         {/* Header */}
         <motion.div
-          className="text-center mb-16"
+          className="text-center mb-10"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -64,8 +69,8 @@ export function SecuritySection() {
           </span>
 
           <h2
-            className="text-4xl md:text-5xl font-bold mb-4"
-            style={{ fontFamily: "var(--font-figtree), Figtree, sans-serif", color: "#202020" }}
+            className="text-4xl md:text-5xl font-bold mb-4 text-white"
+            style={{ fontFamily: "var(--font-figtree), Figtree, sans-serif" }}
           >
             Security That Earns
             <br />
@@ -73,15 +78,15 @@ export function SecuritySection() {
           </h2>
 
           <p
-            className="text-lg max-w-2xl mx-auto"
-            style={{ fontFamily: "var(--font-figtree), Figtree, sans-serif", color: "#666666" }}
+            className="text-lg max-w-2xl mx-auto text-white/90"
+            style={{ fontFamily: "var(--font-figtree), Figtree, sans-serif" }}
           >
             Built from the ground up with privacy and security as core principles, not afterthoughts.
           </p>
         </motion.div>
 
         {/* 2x2 / 4-col Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
           {securityFeatures.map((feature, index) => (
             <motion.div
               key={feature.title}

@@ -1,20 +1,22 @@
 "use client"
 
 import { useState } from "react"
-import { motion } from "framer-motion"
+import { motion, AnimatePresence } from "framer-motion"
 import DashboardSidebar from "@/components/dashboard/DashboardSidebar"
 import DashboardHeader from "@/components/dashboard/DashboardHeader"
 import CulturePulse from "@/components/dashboard/CulturePulse"
 import DailyDigest from "@/components/dashboard/DailyDigest"
-import RealTimeFeed from "@/components/dashboard/RealTimeFeed"
+import RealTimeFeedEnhanced from "@/components/dashboard/RealTimeFeedEnhanced"
 import RiskRadarCard from "@/components/dashboard/RiskRadarCard"
 import ActionTrackerFull from "@/components/dashboard/ActionTrackerFull"
-import HealthBreakdown from "@/components/dashboard/HealthBreakdown"
+import HealthBreakdownEnhanced from "@/components/dashboard/HealthBreakdownEnhanced"
 import QuickActionsBar from "@/components/dashboard/QuickActionsBar"
 import FeedbackDetailPanel from "@/components/dashboard/FeedbackDetailPanel"
+import { useDashboardStore } from "@/lib/dashboardStore"
 
 export default function DashboardPage() {
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false)
+  const { selectedDepartment, setSelectedDepartment } = useDashboardStore()
 
   return (
     <div className="min-h-screen bg-[#F8F7F4]">
@@ -35,6 +37,34 @@ export default function DashboardPage() {
         {/* Quick Actions Bar */}
         <QuickActionsBar />
 
+        {/* Active Filter Badge */}
+        <AnimatePresence>
+          {selectedDepartment && (
+            <motion.div
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              className="mx-6 mt-4 px-4 py-3 rounded-xl bg-blue-50 border-2 border-blue-400 flex items-center justify-between"
+            >
+              <div className="flex items-center gap-3">
+                <span className="w-2 h-2 rounded-full bg-blue-500 animate-pulse" />
+                <span className="text-sm font-semibold text-blue-900">
+                  Filtered to: <span className="font-bold">{selectedDepartment}</span>
+                </span>
+                <span className="text-xs text-blue-600 bg-blue-100 px-2 py-0.5 rounded-full">
+                  Cross-component filtering active
+                </span>
+              </div>
+              <button
+                onClick={() => setSelectedDepartment(null)}
+                className="flex items-center gap-1 px-3 py-1.5 rounded-lg bg-blue-600 text-white text-sm font-medium hover:bg-blue-700 transition-colors"
+              >
+                Clear Filter
+              </button>
+            </motion.div>
+          )}
+        </AnimatePresence>
+
         <div className="p-6 space-y-6">
           {/* Top Row: Culture Pulse + Daily Digest */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
@@ -44,14 +74,14 @@ export default function DashboardPage() {
 
           {/* Middle Row: Real-Time Feed + Risk Radar */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-            <RealTimeFeed />
+            <RealTimeFeedEnhanced />
             <RiskRadarCard />
           </div>
 
           {/* Bottom Row: Action Tracker + Health Breakdown */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             <ActionTrackerFull />
-            <HealthBreakdown />
+            <HealthBreakdownEnhanced />
           </div>
         </div>
       </motion.main>

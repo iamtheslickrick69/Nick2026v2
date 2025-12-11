@@ -2,6 +2,9 @@ import type React from "react"
 import type { Metadata } from "next"
 import { Figtree, Inter, Geist_Mono } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
+import { CoroProvider } from "@/contexts/CoroContext"
+import { CoroOrb } from "@/components/coro/CoroOrb"
+import { CoroChat } from "@/components/coro/CoroChat"
 import "./globals.css"
 
 const figtree = Figtree({
@@ -22,9 +25,8 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-  title: "v0 App",
-  description: "Created with v0",
-  generator: "v0.app",
+  title: "LoopSync - Employee Feedback Platform",
+  description: "Transform employee feedback into actionable insights with AI-powered analysis",
   icons: {
     icon: "/icon.svg",
   },
@@ -38,8 +40,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.variable} ${figtree.variable} ${geistMono.variable} font-sans antialiased`}>
-        {children}
-        <Analytics />
+        <CoroProvider>
+          {children}
+          <CoroOrb />
+          <CoroChat />
+          <Analytics />
+        </CoroProvider>
       </body>
     </html>
   )

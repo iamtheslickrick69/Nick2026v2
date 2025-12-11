@@ -39,7 +39,7 @@ export default function HowItWorksSection() {
   const [expandedIndex, setExpandedIndex] = useState(0)
 
   return (
-    <section className="relative bg-[#F5F3F0] py-20 md:py-28 overflow-hidden">
+    <section id="how-it-works" className="relative bg-[#F5F3F0] py-20 md:py-28 overflow-hidden">
       {/* Top Gradient Blend */}
       <div
         className="absolute top-0 left-0 right-0 pointer-events-none"

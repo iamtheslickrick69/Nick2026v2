@@ -72,15 +72,15 @@ export const LoopSyncNavbar = ({ onOpenContact }: LoopSyncNavbarProps) => {
             transition-all duration-500 ease-out
             ${
               isScrolled
-                ? "bg-white/90 backdrop-blur-xl border border-[#1B7F8E]/20 shadow-lg shadow-[#E07850]/5"
-                : "bg-white/70 backdrop-blur-lg border border-[#E07850]/10"
+                ? "bg-white/95 backdrop-blur-xl border border-[#E5E5E5] shadow-lg"
+                : "bg-white/10 backdrop-blur-md border border-white/20"
             }
           `}
         >
           <button onClick={() => handleLinkClick("#home")} className="flex items-center gap-2 shrink-0">
             <div className="w-8 h-8 rounded-full bg-gradient-to-br from-[#E07850] via-[#1B7F8E] to-[#06b6d4] animate-pulse" />
             <span
-              className="text-[#202020] tracking-tight"
+              className={`tracking-tight transition-colors ${isScrolled ? "text-[#202020]" : "text-white"}`}
               style={{
                 fontFamily: "Figtree, sans-serif",
                 fontWeight: 600,
@@ -98,7 +98,15 @@ export const LoopSyncNavbar = ({ onOpenContact }: LoopSyncNavbarProps) => {
                 onClick={() => handleLinkClick(link.href)}
                 className={`
                   px-4 py-2 text-base transition-colors duration-200
-                  ${link.isActive ? "text-[#202020]" : "text-[#666666] hover:text-[#202020]"}
+                  ${
+                    isScrolled
+                      ? link.isActive
+                        ? "text-[#202020]"
+                        : "text-[#666666] hover:text-[#202020]"
+                      : link.isActive
+                        ? "text-white"
+                        : "text-white/70 hover:text-white"
+                  }
                 `}
                 style={{
                   fontFamily: "Figtree, sans-serif",

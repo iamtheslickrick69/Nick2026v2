@@ -3,6 +3,7 @@
 import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { Bell, Search, ChevronDown, Calendar, RefreshCw, Sparkles } from "lucide-react"
+import { useCoro } from "@/contexts/CoroContext"
 
 interface DashboardHeaderProps {
   title: string
@@ -12,6 +13,7 @@ interface DashboardHeaderProps {
 function DashboardHeader({ title, subtitle }: DashboardHeaderProps) {
   const [searchFocused, setSearchFocused] = useState(false)
   const [showNotifications, setShowNotifications] = useState(false)
+  const { openChat } = useCoro()
 
   const notifications = [
     { id: 1, type: "alert", message: "3 new risk signals detected", time: "2m ago", urgent: true },
@@ -67,7 +69,10 @@ function DashboardHeader({ title, subtitle }: DashboardHeaderProps) {
           </button>
 
           {/* AI Quick Action */}
-          <button className="h-9 px-4 rounded-xl bg-gradient-to-r from-[#E07850] to-[#C9643D] hover:from-[#d06840] hover:to-[#b9542d] text-white text-sm font-medium flex items-center gap-2 transition-all shadow-sm hover:shadow-md">
+          <button
+            onClick={openChat}
+            className="h-9 px-4 rounded-xl bg-gradient-to-r from-[#E07850] to-[#C9643D] hover:from-[#d06840] hover:to-[#b9542d] text-white text-sm font-medium flex items-center gap-2 transition-all shadow-sm hover:shadow-md"
+          >
             <Sparkles size={14} />
             <span>Ask Coro</span>
           </button>

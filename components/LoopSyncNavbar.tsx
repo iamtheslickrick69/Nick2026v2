@@ -123,6 +123,7 @@ export const LoopSyncNavbar = ({ onOpenContact }: LoopSyncNavbarProps) => {
             whileHover={{
               borderRadius: "16px",
               boxShadow: "0 4px 6px -1px rgba(224, 120, 80, 0.3)",
+              scale: 1.02,
             }}
             whileTap={{ scale: 0.98 }}
             transition={{

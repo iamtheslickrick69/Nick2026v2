@@ -6,18 +6,34 @@ import { Smartphone, Zap, Users } from "lucide-react"
 const cards = [
   {
     icon: Smartphone,
-    title: "Not Another App",
-    body: "No app fatigue. No passwords. Coro meets employees and customers in their native messaging app. Zero friction, maximum participation.",
+    title: "No App Fatigue",
+    body: (
+      <>
+        Everyone texts. Nobody downloads another app. Coro meets people where they already are — their native messaging
+        app. Result: <span className="text-[#14b8a6] font-bold text-lg">98% engagement</span> vs. 30% for email.
+      </>
+    ),
   },
   {
     icon: Zap,
-    title: "98% Open Rate",
-    body: "SMS gets read within 3 minutes on average. When anyone texts Coro, they're not adding work. They're just texting.",
+    title: "Read in 3 Minutes",
+    body: (
+      <>
+        <span className="text-[#14b8a6] font-bold text-lg">98%</span> of text messages are opened within 3 minutes.
+        Your feedback doesn't sit in an inbox. It gets seen, processed, and acted on — fast.
+      </>
+    ),
   },
   {
     icon: Users,
-    title: "True Accessibility",
-    body: "Everyone has a phone. SMS reaches your entire workforce AND customer base — warehouse, remote, frontline, corporate, or customer. No one left out.",
+    title: "Everyone, Everywhere",
+    body: (
+      <>
+        Warehouse workers. Remote teams. Frontline staff. Customers. SMS reaches{" "}
+        <span className="text-[#14b8a6] font-bold text-lg">100%</span> of your people without requiring Wi-Fi, app
+        store approval, or IT setup.
+      </>
+    ),
   },
 ]
 
@@ -30,13 +46,22 @@ const images = [
 
 export default function WhySMSSection() {
   return (
-    <section className="relative py-24 md:py-32 bg-white overflow-hidden">
+    <section className="relative py-32 md:py-40 bg-gradient-to-br from-white via-[#14b8a6]/5 to-[#0891b2]/10 overflow-hidden">
       {/* Dot pattern overlay */}
       <div
         className="absolute inset-0 opacity-40"
         style={{
           backgroundImage: "radial-gradient(circle at 1px 1px, rgba(224,120,80,0.15) 1px, transparent 0)",
           backgroundSize: "32px 32px",
+        }}
+      />
+
+      {/* Ultra-subtle texture */}
+      <div
+        className="absolute inset-0 opacity-[0.02]"
+        style={{
+          backgroundImage:
+            "url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\")",
         }}
       />
 
@@ -60,9 +85,9 @@ export default function WhySMSSection() {
             whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-3xl md:text-5xl font-bold text-[#202020] mb-6"
+            className="text-4xl md:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#14b8a6] via-[#1B7F8E] to-[#0891b2] mb-6"
           >
-            Why SMS? Because Everyone Already Has It.
+            One Channel. 98% Open Rate. Zero Friction.
           </motion.h2>
 
           {/* Subheadline */}
@@ -71,9 +96,10 @@ export default function WhySMSSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-lg text-[#666666] max-w-2xl mx-auto"
+            className="text-lg md:text-xl text-[#202020] max-w-3xl mx-auto font-medium leading-relaxed"
           >
-            No app downloads. No passwords. No training. Just text.
+            While your emails sit unread and your apps gather dust, SMS gets opened in 3 minutes. Every employee. Every
+            customer. Every time.
           </motion.p>
         </div>
 
@@ -85,24 +111,25 @@ export default function WhySMSSection() {
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               whileHover={{
-                y: -6,
-                boxShadow: "0 20px 40px -12px rgba(0, 0, 0, 0.15)",
-                borderColor: "rgba(224, 120, 80, 0.3)",
+                y: -12,
+                scale: 1.02,
+                boxShadow: "0 25px 50px -12px rgba(20, 184, 166, 0.25)",
+                borderColor: "rgba(20, 184, 166, 0.5)",
               }}
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.6, delay: index * 0.15, ease: "easeOut" }}
-              className="bg-white border border-[#E5E5E5] rounded-2xl p-8 shadow-sm transition-all duration-300"
+              className="relative overflow-hidden bg-gradient-to-br from-white via-[#14b8a6]/5 to-[#0891b2]/10 border border-[#14b8a6]/20 rounded-3xl p-10 shadow-lg transition-all duration-300"
             >
               {/* Icon */}
-              <div className="w-12 h-12 rounded-xl bg-[#E07850]/10 flex items-center justify-center mb-5">
-                <card.icon className="w-6 h-6 text-[#E07850]" />
+              <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#14b8a6] to-[#0891b2] flex items-center justify-center mb-6 shadow-lg shadow-[#14b8a6]/30">
+                <card.icon className="w-8 h-8 text-white" strokeWidth={2.5} />
               </div>
 
               {/* Title */}
-              <h3 className="text-xl font-bold text-[#202020] mb-3">{card.title}</h3>
+              <h3 className="text-2xl md:text-3xl font-black text-[#14b8a6] mb-4">{card.title}</h3>
 
               {/* Body */}
-              <p className="text-[#666666] leading-relaxed">{card.body}</p>
+              <div className="text-[#202020]/80 leading-relaxed text-base">{card.body}</div>
             </motion.div>
           ))}
         </div>

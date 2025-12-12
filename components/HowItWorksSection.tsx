@@ -72,9 +72,9 @@ export default function HowItWorksSection() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#202020] mb-4 leading-tight"
           >
-            AI Shouldn't Replace Conversations.
+            More Personal Than a Manager.
             <br />
-            It Should Start Them.
+            More Scalable Than Software.
           </motion.h2>
 
           {/* Subheadline */}
@@ -85,8 +85,8 @@ export default function HowItWorksSection() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="text-xl text-[#666666]"
           >
-            From anonymous feedback to action loops that close—Coro doesn't just collect voices, it catalyzes real
-            dialogue.
+            Whether it's 50 warehouse workers or 5,000 customers, Coro remembers every conversation, follows up on every
+            concern, and closes the loop on every promise.
           </motion.p>
         </div>
 

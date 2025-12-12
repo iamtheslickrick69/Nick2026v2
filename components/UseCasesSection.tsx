@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { AlertTriangle, TrendingDown, UserX, MessageCircle, XCircle, CheckCircle, MoveHorizontal, UserMinus } from "lucide-react"
+import { AlertTriangle, TrendingDown, UserX, MessageCircle, XCircle, CheckCircle, MoveHorizontal, UserMinus, ChevronLeft, ChevronRight } from "lucide-react"
 
 const useCases = [
   {
@@ -186,9 +186,9 @@ export default function UseCasesSection() {
           transition={{ duration: 0.6 }}
           className="max-w-6xl mx-auto"
         >
-          <div className="relative bg-white border-2 border-[#E5E5E5] rounded-3xl overflow-hidden shadow-2xl">
+          <div className="relative bg-white border-2 border-red-100 rounded-3xl overflow-hidden shadow-2xl">
             {/* Slider Container */}
-            <div className="relative" style={{ height: "480px" }}>
+            <div className="relative" style={{ height: "340px" }}>
               <AnimatePresence>
                 {/* BEFORE Side (Left) - Red */}
                 <motion.div
@@ -197,23 +197,29 @@ export default function UseCasesSection() {
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
                   transition={{ duration: 0.3 }}
-                  className="absolute inset-0 bg-gradient-to-br from-red-50 to-red-100/80"
+                  className="absolute inset-0 bg-gradient-to-br from-red-900/20 via-red-800/25 to-red-700/20 shadow-[inset_0_0_80px_rgba(127,29,29,0.15)]"
                   style={{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)` }}
                 >
-                  <div className="h-full p-8 md:p-12 flex flex-col">
+                  <div className="h-full p-6 md:p-8 flex flex-col relative">
+                    {/* Warning Icon in corner */}
+                    <div className="absolute top-4 right-4">
+                      <div className="w-8 h-8 rounded-full bg-red-600/25 flex items-center justify-center animate-pulse">
+                        <AlertTriangle className="w-4 h-4 text-red-700" />
+                      </div>
+                    </div>
                     {/* Header */}
                     <motion.div
                       initial={{ opacity: 0, x: -20 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ duration: 0.4, delay: 0.1 }}
-                      className="flex items-center gap-4 mb-6"
+                      className="flex items-center gap-3 mb-5"
                     >
-                      <div className="w-12 h-12 rounded-xl bg-red-500/10 flex items-center justify-center">
-                        <XCircle className="w-7 h-7 text-red-600" />
+                      <div className="w-12 h-12 rounded-xl bg-red-600/25 flex items-center justify-center">
+                        <XCircle className="w-6 h-6 text-red-700" />
                       </div>
                       <div>
-                        <h3 className="text-2xl font-bold text-[#202020]">{activeCase.before.title}</h3>
-                        <p className="text-sm font-semibold text-red-600 uppercase tracking-wide">The Problem</p>
+                        <h3 className="text-xl font-bold text-[#202020]">{activeCase.before.title}</h3>
+                        <p className="text-xs font-semibold text-red-700 uppercase tracking-wide">The Problem</p>
                       </div>
                     </motion.div>
 
@@ -222,23 +228,23 @@ export default function UseCasesSection() {
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
                       transition={{ duration: 0.4, delay: 0.2 }}
-                      className="text-base text-[#202020]/80 mb-8 leading-relaxed font-medium"
+                      className="text-sm text-[#202020]/80 mb-6 leading-relaxed font-medium"
                     >
                       {activeCase.before.description}
                     </motion.p>
 
                     {/* Problem List */}
-                    <div className="space-y-3 mb-auto">
+                    <div className="space-y-2 mb-auto">
                       {activeCase.before.problems.map((problem, i) => (
                         <motion.div
                           key={i}
                           initial={{ opacity: 0, x: -10 }}
                           animate={{ opacity: 1, x: 0 }}
                           transition={{ duration: 0.3, delay: 0.3 + i * 0.05 }}
-                          className="flex items-start gap-3"
+                          className="flex items-start gap-2.5"
                         >
-                          <div className="w-2 h-2 rounded-full bg-red-500 mt-1.5 flex-shrink-0" />
-                          <span className="text-sm text-[#202020] font-medium">{problem}</span>
+                          <div className="w-1.5 h-1.5 rounded-full bg-red-600 mt-1.5 flex-shrink-0" />
+                          <span className="text-xs text-[#202020] font-medium">{problem}</span>
                         </motion.div>
                       ))}
                     </div>
@@ -248,10 +254,10 @@ export default function UseCasesSection() {
                       initial={{ opacity: 0, scale: 0.9 }}
                       animate={{ opacity: 1, scale: 1 }}
                       transition={{ duration: 0.4, delay: 0.5 }}
-                      className="pt-6 border-t-2 border-red-200 mt-8"
+                      className="pt-5 border-t-2 border-red-200 mt-6"
                     >
-                      <div className="text-5xl font-black text-red-600 mb-1">{activeCase.before.stat}</div>
-                      <div className="text-sm text-[#202020]/70 font-semibold">{activeCase.before.statLabel}</div>
+                      <div className="text-4xl font-black text-red-700 mb-1">{activeCase.before.stat}</div>
+                      <div className="text-xs text-[#202020]/70 font-semibold">{activeCase.before.statLabel}</div>
                     </motion.div>
                   </div>
                 </motion.div>
@@ -263,23 +269,23 @@ export default function UseCasesSection() {
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
                   transition={{ duration: 0.3 }}
-                  className="absolute inset-0 bg-gradient-to-br from-emerald-50 to-teal-100/80"
+                  className="absolute inset-0 bg-gradient-to-br from-emerald-900/20 via-teal-800/25 to-emerald-700/20 shadow-[inset_0_0_80px_rgba(6,78,59,0.15)]"
                   style={{ clipPath: `inset(0 0 0 ${sliderPosition}%)` }}
                 >
-                  <div className="h-full p-8 md:p-12 flex flex-col">
+                  <div className="h-full p-6 md:p-8 flex flex-col">
                     {/* Header */}
                     <motion.div
                       initial={{ opacity: 0, x: 20 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ duration: 0.4, delay: 0.1 }}
-                      className="flex items-center gap-4 mb-6"
+                      className="flex items-center gap-3 mb-5"
                     >
-                      <div className="w-12 h-12 rounded-xl bg-emerald-500/10 flex items-center justify-center">
-                        <CheckCircle className="w-7 h-7 text-emerald-600" />
+                      <div className="w-12 h-12 rounded-xl bg-emerald-600/25 flex items-center justify-center">
+                        <CheckCircle className="w-6 h-6 text-emerald-700" />
                       </div>
                       <div>
-                        <h3 className="text-2xl font-bold text-[#202020]">{activeCase.after.title}</h3>
-                        <p className="text-sm font-semibold text-emerald-600 uppercase tracking-wide">The Solution</p>
+                        <h3 className="text-xl font-bold text-[#202020]">{activeCase.after.title}</h3>
+                        <p className="text-xs font-semibold text-emerald-700 uppercase tracking-wide">The Solution</p>
                       </div>
                     </motion.div>
 
@@ -288,23 +294,23 @@ export default function UseCasesSection() {
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
                       transition={{ duration: 0.4, delay: 0.2 }}
-                      className="text-base text-[#202020]/80 mb-8 leading-relaxed font-medium"
+                      className="text-sm text-[#202020]/80 mb-6 leading-relaxed font-medium"
                     >
                       {activeCase.after.description}
                     </motion.p>
 
                     {/* Solution List */}
-                    <div className="space-y-3 mb-auto">
+                    <div className="space-y-2 mb-auto">
                       {activeCase.after.solutions.map((solution, i) => (
                         <motion.div
                           key={i}
                           initial={{ opacity: 0, x: 10 }}
                           animate={{ opacity: 1, x: 0 }}
                           transition={{ duration: 0.3, delay: 0.3 + i * 0.05 }}
-                          className="flex items-start gap-3"
+                          className="flex items-start gap-2.5"
                         >
-                          <div className="w-2 h-2 rounded-full bg-emerald-500 mt-1.5 flex-shrink-0" />
-                          <span className="text-sm text-[#202020] font-medium">{solution}</span>
+                          <div className="w-1.5 h-1.5 rounded-full bg-emerald-600 mt-1.5 flex-shrink-0" />
+                          <span className="text-xs text-[#202020] font-medium">{solution}</span>
                         </motion.div>
                       ))}
                     </div>
@@ -314,10 +320,10 @@ export default function UseCasesSection() {
                       initial={{ opacity: 0, scale: 0.9 }}
                       animate={{ opacity: 1, scale: 1 }}
                       transition={{ duration: 0.4, delay: 0.5 }}
-                      className="pt-6 border-t-2 border-emerald-200 mt-8"
+                      className="pt-5 border-t-2 border-emerald-200 mt-6"
                     >
-                      <div className="text-5xl font-black text-emerald-600 mb-1">{activeCase.after.stat}</div>
-                      <div className="text-sm text-[#202020]/70 font-semibold">{activeCase.after.statLabel}</div>
+                      <div className="text-4xl font-black text-emerald-700 mb-1">{activeCase.after.stat}</div>
+                      <div className="text-xs text-[#202020]/70 font-semibold">{activeCase.after.statLabel}</div>
                     </motion.div>
                   </div>
                 </motion.div>
@@ -332,21 +338,25 @@ export default function UseCasesSection() {
               >
                 {/* Drag Handle */}
                 <motion.div
-                  whileHover={{ scale: 1.15, rotate: 90 }}
+                  whileHover={{ scale: 1.15 }}
                   whileTap={{ scale: 0.95 }}
                   className="
-                    absolute top-1/2 left-1/2 
-                    transform -translate-x-1/2 -translate-y-1/2 
-                    w-16 h-16 
+                    absolute top-1/2 left-1/2
+                    transform -translate-x-1/2 -translate-y-1/2
+                    w-16 h-16
                     bg-gradient-to-br from-[#E07850] to-[#C9643D]
-                    rounded-full 
-                    flex items-center justify-center 
-                    shadow-2xl 
-                    cursor-grab active:cursor-grabbing 
+                    rounded-full
+                    flex items-center justify-center
+                    shadow-2xl
+                    cursor-grab active:cursor-grabbing
                     border-4 border-white
                   "
                 >
-                  <MoveHorizontal className="w-7 h-7 text-white" strokeWidth={3} />
+                  <div className="flex items-center gap-0.5">
+                    <ChevronLeft className="w-4 h-4 text-white" strokeWidth={3} />
+                    <MoveHorizontal className="w-4 h-4 text-white" strokeWidth={3} />
+                    <ChevronRight className="w-4 h-4 text-white" strokeWidth={3} />
+                  </div>
                 </motion.div>
               </motion.div>
             </div>

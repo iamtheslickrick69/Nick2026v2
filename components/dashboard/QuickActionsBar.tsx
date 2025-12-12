@@ -21,7 +21,7 @@ export default function QuickActionsBar() {
             onClick={() => setActionEditorModal({})}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="flex items-center gap-2 px-4 py-2 rounded-xl bg-gradient-to-r from-[#E07850] to-[#d96a3f] text-white font-semibold text-sm shadow-md hover:shadow-lg transition-all"
+            className="flex items-center gap-2 px-4 py-2 rounded-xl bg-gradient-to-r from-[#14b8a6] to-[#06b6d4] text-white font-semibold text-sm shadow-md hover:shadow-lg transition-all"
           >
             <Plus className="w-4 h-4" />
             New Action
@@ -30,7 +30,7 @@ export default function QuickActionsBar() {
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="flex items-center gap-2 px-4 py-2 rounded-xl border-2 border-[#E5E5E5] bg-white text-[#202020] font-semibold text-sm hover:border-[#E07850]/30 transition-all"
+            className="flex items-center gap-2 px-4 py-2 rounded-xl border-2 border-[#E5E5E5] bg-white text-[#202020] font-semibold text-sm hover:border-[#14b8a6]/30 transition-all"
           >
             <Calendar className="w-4 h-4" />
             Schedule 1:1
@@ -39,7 +39,7 @@ export default function QuickActionsBar() {
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="flex items-center gap-2 px-4 py-2 rounded-xl border-2 border-[#E5E5E5] bg-white text-[#202020] font-semibold text-sm hover:border-[#E07850]/30 transition-all"
+            className="flex items-center gap-2 px-4 py-2 rounded-xl border-2 border-[#E5E5E5] bg-white text-[#202020] font-semibold text-sm hover:border-[#14b8a6]/30 transition-all"
           >
             <FileText className="w-4 h-4" />
             Export Report

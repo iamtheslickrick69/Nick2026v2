@@ -1,0 +1,330 @@
+/* Mobile-First Responsive Design System */
+
+/* Breakpoints */
+:root {
+  --breakpoint-xs: 475px;
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1536px;
+}
+
+/* Mobile Navigation Enhancements */
+@media (max-width: 768px) {
+  /* Dashboard Layout Mobile */
+  .dashboard-container {
+    flex-direction: column;
+  }
+
+  /* Sidebar Mobile Overlay */
+  .sidebar-mobile {
+    position: fixed !important;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: 280px;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    z-index: 50;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+  }
+
+  .sidebar-mobile.open {
+    transform: translateX(0);
+  }
+
+  /* Mobile Menu Backdrop */
+  .mobile-menu-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 49;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+
+  .mobile-menu-backdrop.visible {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  /* Header Mobile */
+  .dashboard-header {
+    padding: 12px 16px !important;
+    position: sticky;
+    top: 0;
+    z-index: 40;
+  }
+
+  .header-content {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  /* Cards Mobile */
+  .glass-card {
+    margin: 8px !important;
+    padding: 16px !important;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+
+  /* SMS Conversation Mobile */
+  .conversation-list {
+    max-height: 300px !important;
+  }
+
+  .conversation-content {
+    position: fixed;
+    inset: 0;
+    z-index: 45;
+    background: white;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+  }
+
+  .conversation-content.active {
+    transform: translateX(0);
+  }
+
+  /* Loop Pipeline Mobile */
+  .pipeline-view {
+    flex-direction: column !important;
+  }
+
+  .pipeline-column {
+    min-height: 200px !important;
+    max-height: 400px !important;
+  }
+
+  /* Tables Mobile */
+  .table-responsive {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .table-responsive table {
+    min-width: 600px;
+  }
+
+  /* Forms Mobile */
+  .form-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .button-group {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .button-group button {
+    width: 100% !important;
+  }
+
+  /* Modal Mobile */
+  .modal-content {
+    width: calc(100vw - 32px) !important;
+    max-height: calc(100vh - 64px) !important;
+    margin: 16px !important;
+  }
+
+  /* Charts Mobile */
+  .chart-container {
+    height: 300px !important;
+    padding: 12px !important;
+  }
+
+  /* Tab Navigation Mobile */
+  .tab-list {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .tab-list::-webkit-scrollbar {
+    display: none;
+  }
+
+  .tab-button {
+    min-width: 100px;
+    white-space: nowrap;
+  }
+
+  /* Floating Action Button */
+  .fab-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 30;
+  }
+
+  .fab-menu {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 12px;
+    align-items: flex-end;
+  }
+
+  /* Text Truncation Mobile */
+  .truncate-mobile {
+    max-width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  /* Spacing Adjustments */
+  .mobile-padding {
+    padding: 12px !important;
+  }
+
+  .mobile-margin {
+    margin: 12px !important;
+  }
+
+  /* Hide on Mobile */
+  .desktop-only {
+    display: none !important;
+  }
+
+  /* Show on Mobile */
+  .mobile-only {
+    display: block !important;
+  }
+}
+
+/* Tablet Adjustments */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .pipeline-view {
+    flex-direction: row !important;
+    overflow-x: auto;
+  }
+
+  .pipeline-column {
+    min-width: 250px;
+  }
+
+  .sidebar {
+    width: 200px !important;
+  }
+
+  .sidebar.collapsed {
+    width: 60px !important;
+  }
+}
+
+/* Desktop Enhancements */
+@media (min-width: 1025px) {
+  .mobile-only {
+    display: none !important;
+  }
+
+  .desktop-only {
+    display: block !important;
+  }
+
+  /* Hover Effects Desktop Only */
+  .glass-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+  }
+
+  .button:hover {
+    transform: scale(1.02);
+  }
+}
+
+/* Touch Device Optimizations */
+@media (hover: none) and (pointer: coarse) {
+  /* Larger Touch Targets */
+  button, a, .clickable {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  /* Remove Hover States */
+  .glass-card:hover {
+    transform: none;
+    box-shadow: none;
+  }
+
+  /* Better Touch Scrolling */
+  .scrollable {
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: y mandatory;
+  }
+
+  .scroll-item {
+    scroll-snap-align: start;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+
+  .glass-card {
+    page-break-inside: avoid;
+    background: white !important;
+    border: 1px solid #ccc !important;
+  }
+
+  body {
+    background: white !important;
+  }
+}
+
+/* Landscape Mobile */
+@media (max-width: 768px) and (orientation: landscape) {
+  .dashboard-header {
+    position: relative;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .modal-content {
+    max-height: calc(100vh - 32px) !important;
+  }
+}
+
+/* High Resolution Displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .glass-card {
+    border: 0.5px solid rgba(255, 255, 255, 0.3);
+  }
+}
+
+/* Accessibility - Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Dark Mode Responsive Adjustments */
+@media (prefers-color-scheme: dark) {
+  .glass-card {
+    background: rgba(30, 30, 30, 0.7);
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+
+  .mobile-menu-backdrop {
+    background: rgba(0, 0, 0, 0.6);
+  }
+}

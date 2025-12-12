@@ -52,7 +52,7 @@ function DashboardHeader({ title, subtitle }: DashboardHeaderProps) {
               placeholder="Search..."
               onFocus={() => setSearchFocused(true)}
               onBlur={() => setSearchFocused(false)}
-              className="w-full h-9 pl-9 pr-4 rounded-xl bg-[#F5F3F0] border border-transparent focus:border-[#E07850]/30 focus:bg-white text-sm text-[#202020] placeholder:text-[#9a9a9a] outline-none transition-all"
+              className="w-full h-9 pl-9 pr-4 rounded-xl bg-[#F5F3F0] border border-transparent focus:border-[#14b8a6]/30 focus:bg-white text-sm text-[#202020] placeholder:text-[#9a9a9a] outline-none transition-all"
             />
           </motion.div>
 
@@ -71,7 +71,7 @@ function DashboardHeader({ title, subtitle }: DashboardHeaderProps) {
           {/* AI Quick Action */}
           <button
             onClick={openChat}
-            className="h-9 px-4 rounded-xl bg-gradient-to-r from-[#E07850] to-[#C9643D] hover:from-[#d06840] hover:to-[#b9542d] text-white text-sm font-medium flex items-center gap-2 transition-all shadow-sm hover:shadow-md"
+            className="h-9 px-4 rounded-xl bg-gradient-to-r from-[#14b8a6] to-[#C9643D] hover:from-[#d06840] hover:to-[#b9542d] text-white text-sm font-medium flex items-center gap-2 transition-all shadow-sm hover:shadow-md"
           >
             <Sparkles size={14} />
             <span>Ask Coro</span>
@@ -122,7 +122,7 @@ function DashboardHeader({ title, subtitle }: DashboardHeaderProps) {
                     ))}
                   </div>
                   <div className="p-3 border-t border-[#E5E5E5] bg-[#F5F3F0]">
-                    <button className="w-full text-sm text-[#E07850] font-medium hover:underline">
+                    <button className="w-full text-sm text-[#14b8a6] font-medium hover:underline">
                       View all notifications
                     </button>
                   </div>

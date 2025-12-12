@@ -48,7 +48,7 @@ function RecentFeedbackFeed() {
     >
       {/* Header */}
       <div className="flex items-center gap-2 mb-4">
-        <MessageSquare size={16} className="text-[#E07850]" />
+        <MessageSquare size={16} className="text-[#14b8a6]" />
         <h3 className="text-base font-semibold text-[#202020]">Recent Feedback</h3>
       </div>
 
@@ -78,7 +78,7 @@ function RecentFeedbackFeed() {
       </div>
 
       {/* CTA */}
-      <button className="w-full mt-3 py-2.5 rounded-xl border border-[#E5E5E5] hover:border-[#E07850]/30 text-sm font-medium text-[#666666] hover:text-[#202020] flex items-center justify-center gap-1 transition-all group">
+      <button className="w-full mt-3 py-2.5 rounded-xl border border-[#E5E5E5] hover:border-[#14b8a6]/30 text-sm font-medium text-[#666666] hover:text-[#202020] flex items-center justify-center gap-1 transition-all group">
         View All Feedback
         <ChevronRight size={14} className="group-hover:translate-x-0.5 transition-transform" />
       </button>

@@ -172,12 +172,12 @@ export default function FeedFilterBar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             onClick={resetFeedFilters}
-            className="flex items-center gap-2 px-4 py-2 rounded-xl bg-[#E07850]/10 border border-[#E07850]/20 text-[#E07850] font-semibold text-sm hover:bg-[#E07850]/20 transition-all"
+            className="flex items-center gap-2 px-4 py-2 rounded-xl bg-[#14b8a6]/10 border border-[#14b8a6]/20 text-[#14b8a6] font-semibold text-sm hover:bg-[#14b8a6]/20 transition-all"
           >
             <X className="w-4 h-4" />
             Clear All Filters
             {activeFilterCount > 0 && (
-              <span className="ml-1 px-2 py-0.5 rounded-full bg-[#E07850] text-white text-xs">
+              <span className="ml-1 px-2 py-0.5 rounded-full bg-[#14b8a6] text-white text-xs">
                 {activeFilterCount}
               </span>
             )}
@@ -209,7 +209,7 @@ function FilterChip({ active, onClick, icon, label, gradient, color, bgColor, bo
     ? `bg-gradient-to-r ${gradient} text-white border-transparent`
     : `${bgColor || "bg-[#1B7F8E]"} ${color || "text-white"} border-transparent`
 
-  const inactiveStyles = `${defaultBgColor} ${defaultColor} ${defaultBorderColor} hover:border-[#E07850]/30`
+  const inactiveStyles = `${defaultBgColor} ${defaultColor} ${defaultBorderColor} hover:border-[#14b8a6]/30`
 
   return (
     <motion.button

@@ -8,36 +8,36 @@ const steps = [
     icon: MessageSquare,
     title: "Employee Texts Coro",
     description: "Anonymous feedback sent via SMS",
-    gradient: "from-emerald-500 to-emerald-600",
-    color: "#10b981",
+    gradient: "from-teal-500 to-teal-600",
+    color: "#14b8a6",
   },
   {
     icon: Eye,
     title: "Dashboard Flags Issue",
     description: "Leadership sees (anonymized)",
-    gradient: "from-blue-500 to-blue-600",
-    color: "#3b82f6",
+    gradient: "from-cyan-500 to-blue-500",
+    color: "#06b6d4",
   },
   {
     icon: CheckCircle,
     title: "Leader Acknowledges",
     description: "Employee gets confirmation",
-    gradient: "from-cyan-500 to-cyan-600",
-    color: "#06b6d4",
+    gradient: "from-blue-500 to-blue-600",
+    color: "#3b82f6",
   },
   {
     icon: UserCheck,
     title: "Assigned to Owner",
     description: "Tracked to resolution",
-    gradient: "from-purple-500 to-purple-600",
-    color: "#a855f7",
+    gradient: "from-blue-600 to-indigo-600",
+    color: "#4f46e5",
   },
   {
     icon: Lock,
     title: "Loop Closes",
     description: "Trust builds",
-    gradient: "from-pink-500 to-pink-600",
-    color: "#ec4899",
+    gradient: "from-sky-500 to-cyan-500",
+    color: "#0ea5e9",
   },
 ]
 
@@ -49,29 +49,15 @@ const stats = [
 
 export default function ClosedLoopTracker() {
   return (
-    <section className="relative py-20 md:py-32 overflow-hidden">
-      {/* Video Background */}
-      <div className="absolute inset-0 w-full h-full overflow-hidden">
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="absolute inset-0 w-full h-full object-cover"
-          style={{ pointerEvents: "none" }}
-        >
-          <source src="https://pub-7824dae2ffd24193b52760c54972be1d.r2.dev/111peachbaby.mp4" type="video/mp4" />
-        </video>
-      </div>
-
-      {/* Overlay for readability */}
-      <div className="absolute inset-0 bg-gradient-to-b from-white/85 via-white/75 to-white/85" />
+    <section className="relative py-20 md:py-32 overflow-hidden bg-gradient-to-br from-gray-50 via-white to-gray-50">
+      {/* Teal-Blue gradient overlay for subtle brand color */}
+      <div className="absolute inset-0 bg-gradient-to-br from-teal-500/5 via-cyan-500/3 to-blue-500/5" />
 
       {/* Dot pattern overlay */}
       <div
-        className="absolute inset-0 opacity-20"
+        className="absolute inset-0 opacity-10"
         style={{
-          backgroundImage: "radial-gradient(circle at 2px 2px, rgba(224,120,80,0.1) 1px, transparent 0)",
+          backgroundImage: "radial-gradient(circle at 2px 2px, rgba(20,184,166,0.15) 1px, transparent 0)",
           backgroundSize: "40px 40px",
         }}
       />
@@ -84,7 +70,7 @@ export default function ClosedLoopTracker() {
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-blue-500/10 to-purple-500/10 border border-blue-500/20 mb-4"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-teal-500/10 to-blue-500/10 border border-teal-500/20 mb-4"
           >
             <Lock className="w-4 h-4 text-blue-600" />
             <span className="text-sm font-semibold text-blue-600 font-mono uppercase tracking-wide">Only LoopSync</span>
@@ -124,7 +110,7 @@ export default function ClosedLoopTracker() {
               whileInView={{ scaleX: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 2, delay: 0.5 }}
-              className="h-full bg-gradient-to-r from-emerald-500 via-blue-500 via-cyan-500 via-purple-500 to-pink-500 origin-left"
+              className="h-full bg-gradient-to-r from-teal-500 via-cyan-500 via-blue-500 via-blue-600 to-indigo-600 origin-left"
             />
           </div>
 
@@ -140,7 +126,7 @@ export default function ClosedLoopTracker() {
                 className="relative flex flex-col items-center text-center"
               >
                 {/* Step Number Badge */}
-                <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-white border-2 border-[#E07850] flex items-center justify-center text-sm font-bold text-[#E07850] z-10 shadow-sm">
+                <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-white border-2 border-[#14b8a6] flex items-center justify-center text-sm font-bold text-[#14b8a6] z-10 shadow-sm">
                   {index + 1}
                 </div>
 
@@ -201,7 +187,7 @@ export default function ClosedLoopTracker() {
               whileHover={{ y: -4, boxShadow: "0 16px 32px -8px rgba(0,0,0,0.15)" }}
               className="bg-white/90 backdrop-blur-md border border-[#E5E5E5] rounded-2xl p-6 text-center shadow-lg transition-all"
             >
-              <div className="text-4xl font-bold text-[#E07850] mb-2">{stat.value}</div>
+              <div className="text-4xl font-bold text-[#14b8a6] mb-2">{stat.value}</div>
               <div className="text-sm font-semibold text-[#202020] mb-1">{stat.label}</div>
               <div className="text-xs text-[#666666]">{stat.sublabel}</div>
             </motion.div>

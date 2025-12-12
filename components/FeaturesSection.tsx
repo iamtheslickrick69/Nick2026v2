@@ -56,7 +56,7 @@ function RiskIndicatorsPreview() {
   const indicators = [
     { label: "Retention Risk", level: "high", color: "bg-red-500" },
     { label: "Legal Exposure", level: "medium", color: "bg-amber-500" },
-    { label: "Team Health", level: "low", color: "bg-emerald-500" },
+    { label: "Team Health", level: "low", color: "bg-blue-500" },
   ]
 
   return (
@@ -82,7 +82,7 @@ function RiskIndicatorsPreview() {
                 ? "text-red-600"
                 : indicator.level === "medium"
                   ? "text-amber-600"
-                  : "text-emerald-600"
+                  : "text-blue-600"
             }`}
           >
             {indicator.level}
@@ -110,7 +110,7 @@ function HealthScorePreview() {
             cy="50"
             r="42"
             fill="none"
-            stroke="#1B7F8E"
+            stroke="#06b6d4"
             strokeWidth="8"
             strokeLinecap="round"
             initial={{ pathLength: 0 }}
@@ -138,7 +138,7 @@ function HealthScorePreview() {
         initial={{ opacity: 0, x: -10 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.3, delay: 0.6 }}
-        className="bg-emerald-50 text-emerald-700 px-3 py-1.5 rounded-full text-sm font-medium"
+        className="bg-blue-50 text-blue-700 px-3 py-1.5 rounded-full text-sm font-medium"
       >
         +4 this week
       </motion.div>
@@ -171,7 +171,7 @@ function ActionChecklistPreview() {
         >
           <div
             className={`w-5 h-5 rounded-full flex items-center justify-center ${
-              step.completed ? "bg-[#1B7F8E]" : "border-2 border-gray-300"
+              step.completed ? "bg-[#06b6d4]" : "border-2 border-gray-300"
             }`}
           >
             {step.completed && (
@@ -204,7 +204,7 @@ function OutreachPillsPreview() {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.2, delay: 0.15 + index * 0.1 }}
           whileHover={{ scale: 1.05 }}
-          className="px-4 py-2 bg-white border border-[#1B7F8E] text-[#1B7F8E] rounded-full text-sm font-medium hover:bg-[#1B7F8E] hover:text-white transition-colors duration-200"
+          className="px-4 py-2 bg-white border border-[#06b6d4] text-[#06b6d4] rounded-full text-sm font-medium hover:bg-[#06b6d4] hover:text-white transition-colors duration-200"
         >
           {pill}
         </motion.button>
@@ -236,7 +236,7 @@ function HashtagCloudPreview() {
           initial={{ opacity: 0, y: 5 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.2, delay: 0.15 + index * 0.08 }}
-          className={`${item.size} font-medium text-[#1B7F8E] hover:text-[#E07850] transition-colors cursor-default`}
+          className={`${item.size} font-medium text-[#06b6d4] hover:text-[#14b8a6] transition-colors cursor-default`}
         >
           {item.tag}
         </motion.span>
@@ -280,7 +280,7 @@ export default function FeaturesSection() {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <span className="font-mono text-xs uppercase tracking-widest text-[#E07850] mb-4 block">FEATURES</span>
+          <span className="font-mono text-xs uppercase tracking-widest text-[#14b8a6] mb-4 block">FEATURES</span>
           <h2 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-[#202020] mb-6 text-balance">
             AI That Brings Humans Closer, Not Further Apart
           </h2>
@@ -305,8 +305,8 @@ export default function FeaturesSection() {
                 whileHover={{ scale: isOpen ? 1 : 1.02 }}
                 className={`rounded-2xl border-2 transition-all duration-300 overflow-hidden ${
                   isOpen
-                    ? "border-[#1B7F8E] shadow-lg shadow-[#1B7F8E]/10"
-                    : "border-[#E5E5E5] bg-white hover:border-[#1B7F8E]/30"
+                    ? "border-[#06b6d4] shadow-lg shadow-[#06b6d4]/10"
+                    : "border-[#E5E5E5] bg-white hover:border-[#06b6d4]/30"
                 }`}
               >
                 {/* Accordion Header */}
@@ -317,12 +317,12 @@ export default function FeaturesSection() {
                   {/* Icon */}
                   <div
                     className={`w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 transition-colors duration-300 ${
-                      isOpen ? "bg-[#1B7F8E]/20" : "bg-[#F5F3F0]"
+                      isOpen ? "bg-[#06b6d4]/20" : "bg-[#F5F3F0]"
                     }`}
                   >
                     <Icon
                       className={`w-6 h-6 transition-colors duration-300 ${
-                        isOpen ? "text-[#1B7F8E]" : "text-[#666666]"
+                        isOpen ? "text-[#06b6d4]" : "text-[#666666]"
                       }`}
                     />
                   </div>
@@ -330,7 +330,7 @@ export default function FeaturesSection() {
                   {/* Title & Category */}
                   <div className="flex-1 flex items-center gap-3 flex-wrap">
                     <h3 className="text-lg font-semibold text-[#202020]">{feature.title}</h3>
-                    <span className="px-2.5 py-0.5 text-xs font-medium rounded-full bg-[#E07850]/10 text-[#E07850]">
+                    <span className="px-2.5 py-0.5 text-xs font-medium rounded-full bg-[#14b8a6]/10 text-[#14b8a6]">
                       {feature.category}
                     </span>
                   </div>

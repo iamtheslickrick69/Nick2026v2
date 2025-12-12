@@ -27,7 +27,7 @@ export default function EmptyState({
       transition={{ duration: 0.5 }}
       className={`flex flex-col items-center justify-center py-16 px-4 ${className}`}
     >
-      <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#E07850]/10 to-[#1B7F8E]/10 flex items-center justify-center mb-6">
+      <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#14b8a6]/10 to-[#06b6d4]/10 flex items-center justify-center mb-6">
         <Icon size={32} className="text-[#666666]" />
       </div>
       <h3 className="text-xl font-semibold text-[#202020] mb-2 text-center">{title}</h3>
@@ -37,7 +37,7 @@ export default function EmptyState({
           onClick={onAction}
           whileHover={{ scale: 1.02 }}
           whileTap={{ scale: 0.98 }}
-          className="px-6 py-2.5 rounded-xl bg-gradient-to-r from-[#E07850] to-[#C9643D] text-white text-sm font-medium hover:shadow-lg transition-all"
+          className="px-6 py-2.5 rounded-xl bg-gradient-to-r from-[#14b8a6] to-[#06b6d4] text-white text-sm font-medium hover:shadow-lg transition-all"
         >
           {actionLabel}
         </motion.button>

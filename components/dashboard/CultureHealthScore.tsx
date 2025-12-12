@@ -123,13 +123,13 @@ function CultureHealthScore() {
                 transition={{ duration: 1, delay: 0.5 }}
               />
             </div>
-            <span className="text-[#E07850] font-semibold w-8">{targetScore}</span>
+            <span className="text-[#14b8a6] font-semibold w-8">{targetScore}</span>
           </div>
         </div>
       </div>
 
       {/* CTA */}
-      <button className="w-full mt-6 py-3 rounded-xl border border-[#E5E5E5] hover:border-[#E07850]/30 hover:bg-[#E07850]/5 text-sm font-medium text-[#202020] flex items-center justify-center gap-2 transition-all group">
+      <button className="w-full mt-6 py-3 rounded-xl border border-[#E5E5E5] hover:border-[#14b8a6]/30 hover:bg-[#14b8a6]/5 text-sm font-medium text-[#202020] flex items-center justify-center gap-2 transition-all group">
         View Detailed Breakdown
         <ChevronRight size={16} className="group-hover:translate-x-1 transition-transform" />
       </button>

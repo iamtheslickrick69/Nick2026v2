@@ -9,22 +9,10 @@ export default function IPhoneDemoSection() {
       {/* Colorful gradient background */}
       <div className="absolute inset-0 w-full h-full">
         {/* Subtle brand color gradient */}
-        <div className="absolute inset-0 w-full h-full bg-gradient-to-br from-[#1B7F8E] via-[#2d5a66] to-[#3a3a3a]" />
+        <div className="absolute inset-0 w-full h-full bg-gradient-to-br from-[#14b8a6] via-[#06b6d4] to-[#3b82f6]" />
 
         {/* Accent gradient overlay for depth */}
-        <div className="absolute inset-0 w-full h-full bg-gradient-to-tr from-[#E07850]/10 via-transparent to-[#06b6d4]/10" />
-
-        {/* Uncomment below for actual video */}
-        {/* <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          preload="auto"
-          className="absolute inset-0 w-full h-full object-cover"
-        >
-          <source src="/videos/demo-bg.mp4" type="video/mp4" />
-        </video> */}
+        <div className="absolute inset-0 w-full h-full bg-gradient-to-tr from-[#14b8a6]/10 via-transparent to-[#06b6d4]/10" />
       </div>
 
       {/* Lighter overlay for text readability */}
@@ -44,9 +32,9 @@ export default function IPhoneDemoSection() {
                 transition={{ duration: 0.6, ease: [0.1, 0, 0.1, 1] }}
                 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-8"
               >
-                They Fear AI Will Replace Them.
+                One AI. 300 Conversations.
                 <br />
-                <span className="text-[#E07850]">We Built AI to Hear Them.</span>
+                <span className="text-[#14b8a6]">Zero Missed Signals.</span>
               </motion.h1>
 
               {/* Subtitle */}
@@ -57,8 +45,7 @@ export default function IPhoneDemoSection() {
                 transition={{ duration: 0.6, delay: 0.1, ease: [0.1, 0, 0.1, 1] }}
                 className="text-xl md:text-2xl text-white/90 leading-relaxed"
               >
-                Coro gives employees what they've been asking for: a voice without fear, and a guarantee that someone's
-                actually listening.
+                While you're in meetings, Coro is having real conversations with every employee. Every concern is heard. Every insight surfaces. Every blind spot closes.
               </motion.p>
             </div>
 
@@ -73,7 +60,7 @@ export default function IPhoneDemoSection() {
               {/* iPhone Frame */}
               <div className="relative">
                 {/* Phone shadow/glow */}
-                <div className="absolute inset-0 blur-3xl bg-[#E07850]/20 rounded-[60px] transform scale-90" />
+                <div className="absolute inset-0 blur-3xl bg-[#14b8a6]/20 rounded-[60px] transform scale-90" />
 
                 {/* iPhone shell */}
                 <div
@@ -120,7 +107,7 @@ export default function IPhoneDemoSection() {
 
                       {/* Chat header */}
                       <div className="flex items-center gap-3 pb-3 border-b border-gray-100">
-                        <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#E07850] to-[#C9643D] flex items-center justify-center">
+                        <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#14b8a6] to-[#06b6d4] flex items-center justify-center">
                           <span className="text-white text-sm font-bold">C</span>
                         </div>
                         <div>
@@ -142,9 +129,9 @@ export default function IPhoneDemoSection() {
                           transition={{ delay: 0.5 }}
                           className="flex gap-2"
                         >
-                          <div className="w-6 h-6 rounded-full bg-gradient-to-br from-[#E07850] to-[#C9643D] flex-shrink-0" />
+                          <div className="w-6 h-6 rounded-full bg-gradient-to-br from-[#14b8a6] to-[#06b6d4] flex-shrink-0" />
                           <div className="bg-gray-100 rounded-2xl rounded-tl-sm px-4 py-2 max-w-[80%]">
-                            <p className="text-sm text-gray-800">Hey! I'm Coro. What's on your mind today?</p>
+                            <p className="text-sm text-gray-800">Hey Sarah! How's everything going this week?</p>
                           </div>
                         </motion.div>
 
@@ -156,8 +143,8 @@ export default function IPhoneDemoSection() {
                           transition={{ delay: 0.8 }}
                           className="flex justify-end"
                         >
-                          <div className="bg-[#E07850] rounded-2xl rounded-tr-sm px-4 py-2 max-w-[80%]">
-                            <p className="text-sm text-white">I need to share something about my manager...</p>
+                          <div className="bg-[#14b8a6] rounded-2xl rounded-tr-sm px-4 py-2 max-w-[80%]">
+                            <p className="text-sm text-white">Honestly? I've been thinking about leaving. The new manager doesn't listen.</p>
                           </div>
                         </motion.div>
 
@@ -169,7 +156,7 @@ export default function IPhoneDemoSection() {
                           transition={{ delay: 1.1 }}
                           className="flex gap-2"
                         >
-                          <div className="w-6 h-6 rounded-full bg-gradient-to-br from-[#E07850] to-[#C9643D] flex-shrink-0" />
+                          <div className="w-6 h-6 rounded-full bg-gradient-to-br from-[#14b8a6] to-[#06b6d4] flex-shrink-0" />
                           <div className="bg-gray-100 rounded-2xl rounded-tl-sm px-4 py-3">
                             <div className="flex gap-1">
                               <motion.span
@@ -200,7 +187,7 @@ export default function IPhoneDemoSection() {
                           className="flex-1 bg-transparent text-sm px-3 py-2 outline-none"
                           readOnly
                         />
-                        <button className="w-8 h-8 bg-[#E07850] rounded-full flex items-center justify-center">
+                        <button className="w-8 h-8 bg-[#14b8a6] rounded-full flex items-center justify-center">
                           <ArrowUp className="w-4 h-4 text-white" />
                         </button>
                       </div>
@@ -219,7 +206,7 @@ export default function IPhoneDemoSection() {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="text-center text-sm text-white/60 mt-12"
           >
-            Choose a role above and select a conversation starter to explore
+            Real conversations. Real insights. Available 24/7 via text.
           </motion.p>
         </div>
       </div>

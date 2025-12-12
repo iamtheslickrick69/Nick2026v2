@@ -74,11 +74,11 @@ const cards = [
       "Share feedback instantly via SMS. No apps. No logins. No friction. Complete anonymity with granular privacy controls. Your voice matters without risking your career.",
     example: 'Example: "I\'m burned out but afraid to say it" → Coro receives instantly → Protected forever',
     color: "emerald",
-    gradient: "from-emerald-500 to-emerald-600",
-    bgLight: "from-emerald-50 to-emerald-100/50",
-    border: "border-emerald-200",
-    textColor: "text-emerald-600",
-    hoverColor: "hover:text-emerald-700",
+    gradient: "from-teal-500 to-cyan-600",
+    bgLight: "from-teal-50 to-cyan-100/50",
+    border: "border-teal-200",
+    textColor: "text-teal-600",
+    hoverColor: "hover:text-teal-700",
   },
   {
     icon: BarChart3,
@@ -134,7 +134,7 @@ export default function ThreeVoicesSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="block text-xs font-semibold text-[#E07850] uppercase tracking-widest mb-3 font-mono"
+            className="block text-xs font-semibold text-[#14b8a6] uppercase tracking-widest mb-3 font-mono"
           >
             THE TRIANGLE OF TRUST
           </motion.span>
@@ -337,7 +337,7 @@ export default function ThreeVoicesSection() {
             subtitle="Workforce"
             metric="850 voices"
             color="#10b981"
-            gradient="from-emerald-500 to-emerald-600"
+            gradient="from-teal-500 to-cyan-600"
             delay={0.8}
           />
 

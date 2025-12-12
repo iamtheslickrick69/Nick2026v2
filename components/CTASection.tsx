@@ -28,9 +28,9 @@ export default function CTASection({ onOpenContact, onOpenVideo }: CTASectionPro
             transition={{ duration: 0.6, ease: [0.1, 0, 0.1, 1] }}
             className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#202020] mb-6"
           >
-            They Say AI Divides.
+            Right Now, Someone on Your Team Is Thinking About Quitting.
             <br />
-            We Say AI Unites.
+            You Just Don't Know It Yet.
           </motion.h2>
 
           {/* Subheadline */}
@@ -41,7 +41,7 @@ export default function CTASection({ onOpenContact, onOpenVideo }: CTASectionPro
             transition={{ duration: 0.6, delay: 0.1, ease: [0.1, 0, 0.1, 1] }}
             className="text-lg md:text-xl text-[#666666] mb-10 leading-relaxed max-w-3xl mx-auto"
           >
-            While others build AI to automate conversations, we built Coro to finally make them possible.
+            Coro closes the blind spots. See what you're missing before it's too late.
           </motion.p>
 
           {/* CTA Buttons */}
@@ -64,10 +64,10 @@ export default function CTASection({ onOpenContact, onOpenVideo }: CTASectionPro
               transition={{ duration: 0.15, ease: [0.455, 0.03, 0.515, 0.955] }}
               className="
                 px-8 py-4
-                bg-gradient-to-r from-[#E07850] to-[#C9643D]
+                bg-gradient-to-r from-[#14b8a6] to-[#06b6d4]
                 text-white font-semibold text-base
                 rounded-full
-                shadow-lg shadow-[#E07850]/20
+                shadow-lg shadow-[#14b8a6]/20
                 flex items-center gap-2
                 group
               "

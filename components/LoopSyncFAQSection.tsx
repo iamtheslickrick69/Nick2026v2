@@ -56,7 +56,7 @@ export function LoopSyncFAQSection() {
             style={{
               fontFamily: "var(--font-geist-mono), monospace",
               background: "rgba(224, 120, 80, 0.1)",
-              color: "#E07850",
+              color: "#14b8a6",
             }}
           >
             <HelpCircle className="w-3.5 h-3.5" />
@@ -69,7 +69,7 @@ export function LoopSyncFAQSection() {
           >
             Questions?
             <br />
-            <span style={{ color: "#E07850" }}>We've Got Answers</span>
+            <span style={{ color: "#14b8a6" }}>We've Got Answers</span>
           </h2>
         </motion.div>
 
@@ -150,8 +150,8 @@ export function LoopSyncFAQSection() {
             className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-medium transition-all duration-150"
             style={{
               fontFamily: "var(--font-figtree), Figtree, sans-serif",
-              color: "#E07850",
-              border: "1px solid #E07850",
+              color: "#14b8a6",
+              border: "1px solid #14b8a6",
             }}
             whileHover={{
               background: "rgba(224, 120, 80, 0.1)",

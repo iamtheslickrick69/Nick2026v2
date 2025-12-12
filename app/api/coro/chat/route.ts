@@ -43,7 +43,7 @@ export async function POST(request: NextRequest) {
 
     // Get user ID (in production, this would come from authentication)
     // For now, using IP address or session ID
-    const userId = request.ip || request.headers.get('x-forwarded-for') || 'anonymous'
+    const userId = request.headers.get('x-forwarded-for') || request.headers.get('x-real-ip') || 'anonymous'
 
     // Run guardrails on user input
     const guardrailResult = runGuardrails(

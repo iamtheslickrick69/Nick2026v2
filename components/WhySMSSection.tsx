@@ -6,26 +6,19 @@ import { Smartphone, Zap, Users } from "lucide-react"
 const cards = [
   {
     icon: Smartphone,
-    title: "Not Another App",
-    body: "No app fatigue. No passwords. Coro meets employees and customers in their native messaging app. Zero friction, maximum participation.",
+    title: "Your Team Is Already Drowning",
+    body: "Your employees get 120+ emails a day, 50+ Slack messages, and alerts from 6 different tools. Adding another app means instant archive. SMS is where they already live—no download, no login, no asking them to check 'one more thing.'",
   },
   {
     icon: Zap,
-    title: "98% Open Rate",
-    body: "SMS gets read within 3 minutes on average. When anyone texts Coro, they're not adding work. They're just texting.",
+    title: "Read Within 3 Minutes",
+    body: "98% open rate. Read in 3 minutes on average. Compare that to email (20% open rate) or Slack (ignored after lunch). When your employees text Coro, they're not adding work. They're just texting.",
   },
   {
     icon: Users,
-    title: "True Accessibility",
-    body: "Everyone has a phone. SMS reaches your entire workforce AND customer base — warehouse, remote, frontline, corporate, or customer. No one left out.",
+    title: "From the Warehouse to the C-Suite",
+    body: "Whether your team is remote, frontline, warehouse, or corporate—everyone has a phone number. No app store approval needed. No IT setup required. Coro reaches your entire workforce, not just the people who check their laptop.",
   },
-]
-
-const images = [
-  { src: "/warehouse-worker-texting-on-phone.jpg", label: "Warehouse" },
-  { src: "/office-professional-using-smartphone.jpg", label: "Office" },
-  { src: "/remote-worker-at-home-texting.jpg", label: "Remote" },
-  { src: "/frontline-retail-employee-with-phone.jpg", label: "Frontline" },
 ]
 
 export default function WhySMSSection() {
@@ -49,7 +42,7 @@ export default function WhySMSSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-xs uppercase tracking-widest text-[#E07850] font-semibold mb-4 font-mono"
+            className="text-xs uppercase tracking-widest text-[#14b8a6] font-semibold mb-4 font-mono"
           >
             The Channel
           </motion.p>
@@ -62,7 +55,7 @@ export default function WhySMSSection() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-3xl md:text-5xl font-bold text-[#202020] mb-6"
           >
-            Why SMS? Because Everyone Already Has It.
+            One Channel. 98% Open Rate. Zero Friction.
           </motion.h2>
 
           {/* Subheadline */}
@@ -73,7 +66,7 @@ export default function WhySMSSection() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-lg text-[#666666] max-w-2xl mx-auto"
           >
-            No app downloads. No passwords. No training. Just text.
+            SMS isn't a feature. It's the only channel that cuts through the noise.
           </motion.p>
         </div>
 
@@ -94,8 +87,8 @@ export default function WhySMSSection() {
               className="bg-white border border-[#E5E5E5] rounded-2xl p-8 shadow-sm transition-all duration-300"
             >
               {/* Icon */}
-              <div className="w-12 h-12 rounded-xl bg-[#E07850]/10 flex items-center justify-center mb-5">
-                <card.icon className="w-6 h-6 text-[#E07850]" />
+              <div className="w-12 h-12 rounded-xl bg-[#14b8a6]/10 flex items-center justify-center mb-5">
+                <card.icon className="w-6 h-6 text-[#14b8a6]" />
               </div>
 
               {/* Title */}
@@ -103,52 +96,6 @@ export default function WhySMSSection() {
 
               {/* Body */}
               <p className="text-[#666666] leading-relaxed">{card.body}</p>
-            </motion.div>
-          ))}
-        </div>
-
-        {/* Image Grid Section */}
-        <motion.h3
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-2xl md:text-3xl font-bold text-center text-[#202020] mb-12"
-        >
-          See It In Action Across Your Organization
-        </motion.h3>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-          {images.map((image, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              whileHover={{ scale: 1.02 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.1, ease: "easeOut" }}
-              className="group"
-            >
-              <div
-                className="relative overflow-hidden rounded-2xl border border-[#E5E5E5] shadow-md hover:shadow-xl transition-all"
-                style={{
-                  boxShadow:
-                    "rgba(0, 0, 0, 0.04) 0 0 0 1px, rgba(0, 0, 0, 0.04) 0 1px 1px 0, rgba(0, 0, 0, 0.04) 0 3px 3px -1.4px",
-                }}
-              >
-                {/* Image */}
-                <img
-                  src={image.src || "/placeholder.svg"}
-                  alt={image.label}
-                  className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-
-                {/* Gradient overlay on hover */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              </div>
-
-              {/* Label */}
-              <p className="text-center mt-3 text-sm font-medium text-[#666666]">{image.label}</p>
             </motion.div>
           ))}
         </div>
@@ -161,11 +108,18 @@ export default function WhySMSSection() {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="text-center"
         >
-          <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-[#E07850]/5 border border-[#E07850]/20">
-            <span className="text-sm text-[#666666]">Traditional surveys:</span>
-            <span className="text-sm font-semibold text-[#202020]">30-40%</span>
-            <span className="text-[#666666]">vs SMS:</span>
-            <span className="text-sm font-bold text-[#E07850]">70-85%</span>
+          <div className="inline-flex flex-col items-center gap-2 px-8 py-4 rounded-2xl bg-[#14b8a6]/5 border border-[#14b8a6]/20">
+            <div className="flex items-center gap-3">
+              <span className="text-sm text-[#666666]">Traditional surveys:</span>
+              <span className="text-sm font-semibold text-[#202020]">30% response rate</span>
+            </div>
+            <div className="flex items-center gap-3">
+              <span className="text-sm text-[#666666]">SMS with Coro:</span>
+              <span className="text-sm font-bold text-[#14b8a6]">70-85% response rate</span>
+            </div>
+            <p className="text-sm font-medium text-[#202020] mt-1">
+              More voices. Better data. Fewer blind spots.
+            </p>
           </div>
         </motion.div>
       </div>

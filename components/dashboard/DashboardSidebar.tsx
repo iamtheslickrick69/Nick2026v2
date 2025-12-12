@@ -102,7 +102,7 @@ function DashboardSidebar() {
           <motion.div
             className="w-9 h-9 rounded-full relative overflow-hidden flex-shrink-0"
             style={{
-              background: "conic-gradient(from 0deg, #E07850, #1B7F8E, #06b6d4, #E07850)",
+              background: "conic-gradient(from 0deg, #14b8a6, #06b6d4, #06b6d4, #14b8a6)",
             }}
             animate={{ rotate: 360 }}
             transition={{ duration: 8, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
@@ -111,7 +111,7 @@ function DashboardSidebar() {
             <div
               className="absolute inset-2 rounded-full"
               style={{
-                background: "conic-gradient(from 180deg, #E07850, #1B7F8E, #06b6d4, #E07850)",
+                background: "conic-gradient(from 180deg, #14b8a6, #06b6d4, #06b6d4, #14b8a6)",
               }}
             />
           </motion.div>
@@ -165,13 +165,13 @@ function DashboardSidebar() {
                         flex items-center gap-3 px-3 py-2.5 rounded-xl transition-all duration-200
                         ${
                           isActive
-                            ? "bg-gradient-to-r from-[#E07850]/10 to-[#1B7F8E]/10 text-[#E07850] font-medium"
+                            ? "bg-gradient-to-r from-[#14b8a6]/10 to-[#06b6d4]/10 text-[#14b8a6] font-medium"
                             : "text-[#666666] hover:bg-[#F5F3F0] hover:text-[#202020]"
                         }
                         ${collapsed ? "justify-center" : ""}
                       `}
                     >
-                      <item.icon size={20} className={isActive ? "text-[#E07850]" : ""} />
+                      <item.icon size={20} className={isActive ? "text-[#14b8a6]" : ""} />
                       <AnimatePresence>
                         {!collapsed && (
                           <motion.span
@@ -188,7 +188,7 @@ function DashboardSidebar() {
                       {isActive && !collapsed && (
                         <motion.div
                           layoutId="activeIndicator"
-                          className="ml-auto w-1.5 h-1.5 rounded-full bg-[#E07850]"
+                          className="ml-auto w-1.5 h-1.5 rounded-full bg-[#14b8a6]"
                         />
                       )}
                     </Link>
@@ -243,7 +243,7 @@ function DashboardSidebar() {
         {/* User Profile */}
         <div className={`mt-4 pt-4 border-t border-[#E5E5E5] ${collapsed ? "px-0" : ""}`}>
           <div className={`flex items-center gap-3 ${collapsed ? "justify-center" : ""}`}>
-            <div className="w-9 h-9 rounded-full bg-gradient-to-br from-[#E07850] to-[#1B7F8E] flex items-center justify-center text-white text-sm font-medium flex-shrink-0">
+            <div className="w-9 h-9 rounded-full bg-gradient-to-br from-[#14b8a6] to-[#06b6d4] flex items-center justify-center text-white text-sm font-medium flex-shrink-0">
               JD
             </div>
             <AnimatePresence>

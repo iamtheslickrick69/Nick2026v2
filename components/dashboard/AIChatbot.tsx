@@ -270,38 +270,19 @@ export default function AIChatbot() {
 
   return (
     <>
-      {/* Floating LoopSync Orb Button */}
+      {/* Floating Coro Button */}
       <AnimatePresence>
         {!isOpen && (
           <motion.button
             initial={{ scale: 0, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0, opacity: 0 }}
-            whileHover={{ scale: 1.15 }}
+            whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             onClick={() => setIsOpen(true)}
-            className="fixed bottom-6 right-6 w-16 h-16 rounded-full shadow-2xl z-50 cursor-pointer overflow-hidden"
+            className="fixed bottom-6 right-6 w-16 h-16 rounded-full bg-gradient-to-br from-[#14b8a6] to-[#06b6d4] shadow-lg hover:shadow-xl transition-shadow z-50 cursor-pointer flex items-center justify-center"
           >
-            {/* Animated Gradient Orb (matching navbar logo) */}
-            <motion.div
-              className="absolute inset-0 rounded-full"
-              style={{
-                background: "conic-gradient(from 0deg, #E07850, #1B7F8E, #06b6d4, #E07850)",
-              }}
-              animate={{ rotate: 360 }}
-              transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
-            />
-            {/* Inner white circle */}
-            <div className="absolute inset-1 bg-white rounded-full" />
-            {/* Inner gradient */}
-            <motion.div
-              className="absolute inset-2 rounded-full"
-              style={{
-                background: "conic-gradient(from 180deg, #E07850, #1B7F8E, #06b6d4, #E07850)",
-              }}
-              animate={{ rotate: -360 }}
-              transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
-            />
+            <Sparkles size={28} className="text-white" />
           </motion.button>
         )}
       </AnimatePresence>
@@ -319,7 +300,7 @@ export default function AIChatbot() {
             }`}
           >
             {/* Header */}
-            <div className="p-4 border-b border-[#E5E5E5] bg-gradient-to-r from-[#E07850] to-[#1B7F8E] flex items-center justify-between">
+            <div className="p-4 border-b border-[#E5E5E5] bg-gradient-to-r from-[#14b8a6] to-[#06b6d4] flex items-center justify-between">
               <div className="flex items-center gap-3">
                 {/* Sparkles Icon */}
                 <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center flex-shrink-0">
@@ -358,7 +339,7 @@ export default function AIChatbot() {
                       onClick={() => setActiveTab(tab.id)}
                       className={`flex-1 flex items-center justify-center gap-2 py-3 text-xs font-medium transition-all relative ${
                         isActive
-                          ? "text-[#E07850] bg-white"
+                          ? "text-[#14b8a6] bg-white"
                           : "text-[#666666] hover:text-[#202020] hover:bg-white/50"
                       }`}
                     >
@@ -367,7 +348,7 @@ export default function AIChatbot() {
                       {isActive && (
                         <motion.div
                           layoutId="activeTabIndicator"
-                          className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#E07850]"
+                          className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#14b8a6]"
                         />
                       )}
                     </button>
@@ -415,7 +396,7 @@ export default function AIChatbot() {
                             <button
                               key={idx}
                               onClick={() => setInputValue(prompt)}
-                              className="text-xs px-3 py-2 rounded-lg bg-white border border-[#E5E5E5] text-[#666666] hover:text-[#202020] hover:border-[#E07850]/30 hover:bg-[#F5F3F0] transition-all"
+                              className="text-xs px-3 py-2 rounded-lg bg-white border border-[#E5E5E5] text-[#666666] hover:text-[#202020] hover:border-[#14b8a6]/30 hover:bg-[#F5F3F0] transition-all"
                             >
                               {prompt}
                             </button>
@@ -466,14 +447,14 @@ export default function AIChatbot() {
                       onChange={(e) => setInputValue(e.target.value)}
                       onKeyPress={handleKeyPress}
                       placeholder="Ask Coro anything..."
-                      className="flex-1 px-4 py-3 rounded-xl border-2 border-[#E5E5E5] focus:border-[#1B7F8E] outline-none text-sm text-[#202020] placeholder:text-[#9a9a9a] bg-white transition-colors"
+                      className="flex-1 px-4 py-3 rounded-xl border-2 border-[#E5E5E5] focus:border-[#14b8a6] outline-none text-sm text-[#202020] placeholder:text-[#9a9a9a] bg-white transition-colors"
                     />
                     <motion.button
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                       onClick={handleSendMessage}
                       disabled={!inputValue.trim()}
-                      className="px-4 py-3 rounded-xl bg-gradient-to-r from-[#1B7F8E] to-[#06b6d4] text-white font-semibold text-sm hover:shadow-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                      className="px-4 py-3 rounded-xl bg-gradient-to-r from-[#14b8a6] to-[#06b6d4] text-white font-semibold text-sm hover:shadow-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed"
                     >
                       <Send size={18} />
                     </motion.button>

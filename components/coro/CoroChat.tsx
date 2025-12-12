@@ -65,7 +65,7 @@ export function CoroChat() {
           className="fixed bottom-6 right-6 w-[420px] bg-white dark:bg-[#202020] rounded-2xl shadow-2xl border border-gray-200 dark:border-gray-800 z-50 flex flex-col overflow-hidden"
         >
           {/* Header */}
-          <div className="bg-gradient-to-r from-[#E07850] via-[#1B7F8E] to-[#06b6d4] p-4 flex items-center justify-between">
+          <div className="bg-gradient-to-r from-[#14b8a6] via-[#06b6d4] to-[#06b6d4] p-4 flex items-center justify-between">
             <div className="flex items-center gap-3">
               <motion.div
                 className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center"
@@ -147,7 +147,7 @@ export function CoroChat() {
                       onChange={(e) => setInput(e.target.value)}
                       onKeyDown={handleKeyDown}
                       placeholder="Ask Coro anything..."
-                      className="w-full px-4 py-3 pr-12 rounded-xl border border-gray-300 dark:border-gray-700 bg-white dark:bg-[#1a1a1a] text-gray-900 dark:text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-[#E07850] resize-none"
+                      className="w-full px-4 py-3 pr-12 rounded-xl border border-gray-300 dark:border-gray-700 bg-white dark:bg-[#1a1a1a] text-gray-900 dark:text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-[#14b8a6] resize-none"
                       rows={1}
                       style={{
                         minHeight: '48px',
@@ -159,7 +159,7 @@ export function CoroChat() {
                       type="submit"
                       size="icon"
                       disabled={!input.trim() || isLoading}
-                      className="absolute right-2 top-1/2 -translate-y-1/2 bg-gradient-to-r from-[#E07850] to-[#1B7F8E] hover:opacity-90 disabled:opacity-50 h-8 w-8"
+                      className="absolute right-2 top-1/2 -translate-y-1/2 bg-gradient-to-r from-[#14b8a6] to-[#06b6d4] hover:opacity-90 disabled:opacity-50 h-8 w-8"
                     >
                       <Send className="w-4 h-4" />
                     </Button>

@@ -35,51 +35,100 @@ export function CoroOrb() {
         >
           <motion.button
             onClick={toggleChat}
-            className="relative w-16 h-16 rounded-full bg-gradient-to-br from-[#E07850] via-[#1B7F8E] to-[#06b6d4] shadow-lg hover:shadow-xl transition-shadow duration-300 focus:outline-none focus:ring-4 focus:ring-[#E07850]/30"
-            whileHover={{ scale: 1.1 }}
+            className="relative w-16 h-16 rounded-full shadow-2xl hover:shadow-3xl transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-cyan-400/50"
+            whileHover={{ scale: 1.1, rotate: 5 }}
             whileTap={{ scale: 0.95 }}
             aria-label="Open Coro Chat"
           >
-            {/* Animated gradient border */}
+            {/* Outer rotating glow */}
             <motion.div
-              className="absolute inset-0 rounded-full bg-gradient-to-br from-[#E07850] via-[#1B7F8E] to-[#06b6d4]"
+              className="absolute inset-0 rounded-full opacity-75 blur-xl"
+              style={{
+                background: 'linear-gradient(135deg, #14b8a6, #06b6d4, #3b82f6, #14b8a6)',
+                backgroundSize: '200% 200%'
+              }}
               animate={{
-                rotate: 360
+                backgroundPosition: ['0% 0%', '100% 100%', '0% 0%'],
               }}
               transition={{
-                duration: 8,
+                duration: 4,
                 repeat: Infinity,
                 ease: 'linear'
               }}
             />
 
-            {/* Inner circle */}
-            <div className="absolute inset-[3px] rounded-full bg-white dark:bg-[#202020] flex items-center justify-center">
-              <motion.div
-                animate={{
-                  scale: [1, 1.2, 1],
-                  opacity: [0.7, 1, 0.7]
-                }}
-                transition={{
-                  duration: 2,
-                  repeat: Infinity,
-                  ease: 'easeInOut'
-                }}
-              >
-                <Sparkles className="w-7 h-7 text-[#E07850]" />
-              </motion.div>
-            </div>
+            {/* Rotating gradient border */}
+            <motion.div
+              className="absolute inset-0 rounded-full p-[2px]"
+              style={{
+                background: 'linear-gradient(135deg, #14b8a6, #06b6d4, #3b82f6, #8b5cf6)',
+                backgroundSize: '400% 400%'
+              }}
+              animate={{
+                rotate: 360,
+                backgroundPosition: ['0% 0%', '100% 100%', '0% 0%'],
+              }}
+              transition={{
+                rotate: { duration: 8, repeat: Infinity, ease: 'linear' },
+                backgroundPosition: { duration: 3, repeat: Infinity, ease: 'linear' }
+              }}
+            >
+              {/* Inner circle with gradient */}
+              <div className="w-full h-full rounded-full bg-gradient-to-br from-teal-400 via-cyan-500 to-blue-500 flex items-center justify-center relative overflow-hidden">
+                {/* Shine effect */}
+                <motion.div
+                  className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/30 to-transparent"
+                  animate={{
+                    x: ['-100%', '100%']
+                  }}
+                  transition={{
+                    duration: 2,
+                    repeat: Infinity,
+                    repeatDelay: 1,
+                    ease: 'easeInOut'
+                  }}
+                />
 
-            {/* Pulsing ring effect */}
+                {/* Sparkles icon with pulse */}
+                <motion.div
+                  animate={{
+                    scale: [1, 1.15, 1],
+                    rotate: [0, 5, -5, 0]
+                  }}
+                  transition={{
+                    duration: 2.5,
+                    repeat: Infinity,
+                    ease: 'easeInOut'
+                  }}
+                  className="relative z-10"
+                >
+                  <Sparkles className="w-7 h-7 text-white drop-shadow-lg" />
+                </motion.div>
+              </div>
+            </motion.div>
+
+            {/* Multi-layer pulsing rings */}
             <motion.div
               key={pulseKey}
-              className="absolute inset-0 rounded-full bg-[#E07850]/30"
-              initial={{ scale: 1, opacity: 0.5 }}
-              animate={{ scale: 1.8, opacity: 0 }}
+              className="absolute inset-0 rounded-full bg-gradient-to-r from-teal-400/40 to-blue-500/40"
+              initial={{ scale: 1, opacity: 0.6 }}
+              animate={{ scale: 2, opacity: 0 }}
               transition={{
                 duration: 1.5,
                 repeat: hasUnread ? Infinity : 0,
-                repeatDelay: 0.5
+                repeatDelay: 0.3
+              }}
+            />
+            <motion.div
+              key={pulseKey + 1}
+              className="absolute inset-0 rounded-full bg-gradient-to-r from-cyan-400/30 to-blue-400/30"
+              initial={{ scale: 1, opacity: 0.5 }}
+              animate={{ scale: 2.3, opacity: 0 }}
+              transition={{
+                duration: 1.8,
+                repeat: hasUnread ? Infinity : 0,
+                repeatDelay: 0.3,
+                delay: 0.2
               }}
             />
 
@@ -101,25 +150,29 @@ export function CoroOrb() {
               )}
             </AnimatePresence>
 
-            {/* Floating particles */}
-            {[...Array(3)].map((_, i) => (
+            {/* Floating magic particles */}
+            {[...Array(5)].map((_, i) => (
               <motion.div
                 key={i}
-                className="absolute w-1 h-1 bg-[#06b6d4] rounded-full"
+                className="absolute rounded-full"
                 style={{
+                  width: i % 2 === 0 ? '4px' : '3px',
+                  height: i % 2 === 0 ? '4px' : '3px',
+                  background: i % 3 === 0 ? '#14b8a6' : i % 3 === 1 ? '#06b6d4' : '#3b82f6',
                   left: '50%',
-                  top: '50%'
+                  top: '50%',
+                  boxShadow: '0 0 8px currentColor'
                 }}
                 animate={{
-                  x: [0, (i - 1) * 20],
-                  y: [0, -30 - i * 10],
-                  opacity: [0, 1, 0],
-                  scale: [0, 1, 0]
+                  x: [0, Math.cos(i * 1.2) * 35],
+                  y: [0, Math.sin(i * 1.2) * 35 - 20],
+                  opacity: [0, 0.8, 0],
+                  scale: [0, 1.2, 0]
                 }}
                 transition={{
-                  duration: 2,
+                  duration: 2.5,
                   repeat: Infinity,
-                  delay: i * 0.3,
+                  delay: i * 0.4,
                   ease: 'easeOut'
                 }}
               />

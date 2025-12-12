@@ -44,12 +44,12 @@ const getPriorityStyles = (priority: string) => {
       }
     case "action_required":
       return {
-        bg: "bg-orange-500/10",
-        border: "border-orange-500/20",
-        text: "text-orange-600",
+        bg: "bg-blue-500/10",
+        border: "border-blue-500/20",
+        text: "text-blue-600",
         icon: Zap,
         label: "Action Required",
-        iconColor: "text-orange-600",
+        iconColor: "text-blue-600",
       }
     default:
       return {
@@ -74,7 +74,7 @@ export default function DailyDigest() {
       {/* Header */}
       <div className="flex items-center justify-between mb-6">
         <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-purple-500 to-purple-600 flex items-center justify-center">
+          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-teal-500 to-blue-500 flex items-center justify-center">
             <Sparkles className="w-5 h-5 text-white" />
           </div>
           <div>
@@ -86,8 +86,8 @@ export default function DailyDigest() {
         </div>
 
         {/* Item Count */}
-        <div className="px-3 py-1 rounded-full bg-purple-500/10 border border-purple-500/20">
-          <span className="text-sm font-bold text-purple-600">{todaysDigest.length}</span>
+        <div className="px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20">
+          <span className="text-sm font-bold text-blue-600">{todaysDigest.length}</span>
         </div>
       </div>
 
@@ -154,7 +154,7 @@ export default function DailyDigest() {
         <motion.button
           whileHover={{ scale: 1.02 }}
           whileTap={{ scale: 0.98 }}
-          className="w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-gradient-to-r from-purple-600 to-purple-700 text-white font-semibold text-sm shadow-md hover:shadow-lg transition-all"
+          className="w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-gradient-to-r from-teal-600 to-blue-600 text-white font-semibold text-sm shadow-md hover:shadow-lg transition-all"
         >
           View Full Intelligence Report
           <ArrowRight className="w-4 h-4" />

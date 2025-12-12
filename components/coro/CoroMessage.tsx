@@ -43,7 +43,7 @@ export function CoroMessage({ message, isLatest }: CoroMessageProps) {
           className={`w-8 h-8 rounded-full flex items-center justify-center ${
             isUser
               ? 'bg-gray-200 dark:bg-gray-700'
-              : 'bg-gradient-to-br from-[#E07850] via-[#1B7F8E] to-[#06b6d4]'
+              : 'bg-gradient-to-br from-[#14b8a6] via-[#06b6d4] to-[#06b6d4]'
           }`}
         >
           {isUser ? (
@@ -59,7 +59,7 @@ export function CoroMessage({ message, isLatest }: CoroMessageProps) {
         <div
           className={`rounded-2xl px-4 py-3 ${
             isUser
-              ? 'bg-gradient-to-r from-[#E07850] to-[#1B7F8E] text-white ml-auto'
+              ? 'bg-gradient-to-r from-[#14b8a6] to-[#06b6d4] text-white ml-auto'
               : 'bg-white dark:bg-[#2a2a2a] text-gray-900 dark:text-gray-100 border border-gray-200 dark:border-gray-700'
           }`}
         >
@@ -84,8 +84,8 @@ export function CoroMessage({ message, isLatest }: CoroMessageProps) {
               )}
 
               {message.metadata.actionable && (
-                <div className="flex items-center gap-1 text-[#E07850]">
-                  <div className="w-2 h-2 rounded-full bg-[#E07850]" />
+                <div className="flex items-center gap-1 text-[#14b8a6]">
+                  <div className="w-2 h-2 rounded-full bg-[#14b8a6]" />
                   <span>Actionable</span>
                 </div>
               )}

@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { AlertTriangle, TrendingDown, UserX, MessageCircle, XCircle, CheckCircle, MoveHorizontal, UserMinus } from "lucide-react"
+import { AlertTriangle, TrendingDown, UserX, MessageCircle, XCircle, CheckCircle, MoveHorizontal, Users } from "lucide-react"
 
 const useCases = [
   {
@@ -80,21 +80,21 @@ const useCases = [
     },
   },
   {
-    icon: UserMinus,
-    title: "Customer Churn",
+    icon: Users,
+    title: "Onboarding Blind Spots",
     before: {
       title: "Without LoopSync",
-      description: "Customers quietly churn. Exit surveys reveal problems too late. Your support team filters bad news from leadership.",
-      stat: "$100K+",
-      statLabel: "Average customer lifetime value lost",
-      problems: ["Silent churn signals", "Filtered feedback", "No early warning", "Lost revenue blindness"],
+      description: "New hires smile through onboarding. 90-day check-ins surface issues too late. 40% quit in first year.",
+      stat: "40%",
+      statLabel: "First-year turnover rate",
+      problems: ["Polite feedback", "Delayed check-ins", "Lost onboarding investment", "Repeat failures"],
     },
     after: {
       title: "With LoopSync",
-      description: "Customers text honest feedback directly to leadership. Problems surface before churn. Retention interventions work.",
-      stat: "3 weeks",
-      statLabel: "Earlier churn detection",
-      solutions: ["Direct customer channel", "Unfiltered truth", "Proactive retention", "Revenue protection"],
+      description: "Coro checks in weekly. New hires share real concerns early. Onboarding adjusts in real-time. Retention improves.",
+      stat: "Week 2",
+      statLabel: "Average issue detection",
+      solutions: ["Continuous check-ins", "Early concern detection", "Real-time adjustments", "Improved retention"],
     },
   },
 ]
@@ -127,7 +127,7 @@ export default function UseCasesSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="inline-block text-xs uppercase tracking-widest text-[#E07850] font-bold mb-4 font-mono"
+            className="inline-block text-xs uppercase tracking-widest text-[#14b8a6] font-bold mb-4 font-mono"
           >
             Real Problems, Real Solutions
           </motion.span>
@@ -151,7 +151,7 @@ export default function UseCasesSection() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="text-lg text-[#666666] max-w-3xl mx-auto"
           >
-            {"These aren't hypotheticals. These are the crises that keep executives up at night — from toxic culture to customer churn."}
+            {"These aren't hypotheticals. These are the crises that keep executives up at night — from toxic managers to silent resignations."}
           </motion.p>
         </div>
 
@@ -167,8 +167,8 @@ export default function UseCasesSection() {
                 flex items-center gap-2.5 px-5 py-3 rounded-xl font-semibold transition-all duration-300
                 ${
                   activeIndex === index
-                    ? "bg-gradient-to-r from-[#E07850] to-[#C9643D] text-white shadow-xl shadow-[#E07850]/30"
-                    : "bg-white border-2 border-[#E5E5E5] text-[#666666] hover:text-[#202020] hover:border-[#E07850]/30 hover:shadow-md"
+                    ? "bg-gradient-to-r from-[#14b8a6] to-[#06b6d4] text-white shadow-xl shadow-[#14b8a6]/30"
+                    : "bg-white border-2 border-[#E5E5E5] text-[#666666] hover:text-[#202020] hover:border-[#14b8a6]/30 hover:shadow-md"
                 }
               `}
             >
@@ -263,7 +263,7 @@ export default function UseCasesSection() {
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
                   transition={{ duration: 0.3 }}
-                  className="absolute inset-0 bg-gradient-to-br from-emerald-50 to-teal-100/80"
+                  className="absolute inset-0 bg-gradient-to-br from-teal-50 to-teal-100/80"
                   style={{ clipPath: `inset(0 0 0 ${sliderPosition}%)` }}
                 >
                   <div className="h-full p-8 md:p-12 flex flex-col">
@@ -274,12 +274,12 @@ export default function UseCasesSection() {
                       transition={{ duration: 0.4, delay: 0.1 }}
                       className="flex items-center gap-4 mb-6"
                     >
-                      <div className="w-12 h-12 rounded-xl bg-emerald-500/10 flex items-center justify-center">
-                        <CheckCircle className="w-7 h-7 text-emerald-600" />
+                      <div className="w-12 h-12 rounded-xl bg-teal-500/10 flex items-center justify-center">
+                        <CheckCircle className="w-7 h-7 text-teal-600" />
                       </div>
                       <div>
                         <h3 className="text-2xl font-bold text-[#202020]">{activeCase.after.title}</h3>
-                        <p className="text-sm font-semibold text-emerald-600 uppercase tracking-wide">The Solution</p>
+                        <p className="text-sm font-semibold text-teal-600 uppercase tracking-wide">The Solution</p>
                       </div>
                     </motion.div>
 
@@ -303,7 +303,7 @@ export default function UseCasesSection() {
                           transition={{ duration: 0.3, delay: 0.3 + i * 0.05 }}
                           className="flex items-start gap-3"
                         >
-                          <div className="w-2 h-2 rounded-full bg-emerald-500 mt-1.5 flex-shrink-0" />
+                          <div className="w-2 h-2 rounded-full bg-teal-500 mt-1.5 flex-shrink-0" />
                           <span className="text-sm text-[#202020] font-medium">{solution}</span>
                         </motion.div>
                       ))}
@@ -314,9 +314,9 @@ export default function UseCasesSection() {
                       initial={{ opacity: 0, scale: 0.9 }}
                       animate={{ opacity: 1, scale: 1 }}
                       transition={{ duration: 0.4, delay: 0.5 }}
-                      className="pt-6 border-t-2 border-emerald-200 mt-8"
+                      className="pt-6 border-t-2 border-teal-200 mt-8"
                     >
-                      <div className="text-5xl font-black text-emerald-600 mb-1">{activeCase.after.stat}</div>
+                      <div className="text-5xl font-black text-teal-600 mb-1">{activeCase.after.stat}</div>
                       <div className="text-sm text-[#202020]/70 font-semibold">{activeCase.after.statLabel}</div>
                     </motion.div>
                   </div>
@@ -325,7 +325,7 @@ export default function UseCasesSection() {
 
               {/* Slider Divider */}
               <motion.div
-                className="absolute top-0 bottom-0 w-1 bg-gradient-to-b from-[#E07850] via-blue-500 to-[#E07850] z-10 shadow-xl"
+                className="absolute top-0 bottom-0 w-1 bg-gradient-to-b from-[#14b8a6] via-blue-500 to-[#14b8a6] z-10 shadow-xl"
                 style={{ left: `${sliderPosition}%` }}
                 animate={{ left: `${sliderPosition}%` }}
                 transition={{ type: "spring", stiffness: 400, damping: 35 }}
@@ -338,7 +338,7 @@ export default function UseCasesSection() {
                     absolute top-1/2 left-1/2 
                     transform -translate-x-1/2 -translate-y-1/2 
                     w-16 h-16 
-                    bg-gradient-to-br from-[#E07850] to-[#C9643D]
+                    bg-gradient-to-br from-[#14b8a6] to-[#06b6d4]
                     rounded-full 
                     flex items-center justify-center 
                     shadow-2xl 
@@ -390,11 +390,11 @@ export default function UseCasesSection() {
             transition={{ duration: 0.15, ease: [0.455, 0.03, 0.515, 0.955] }}
             className="
               px-10 py-4 
-              bg-gradient-to-r from-[#E07850] to-[#C9643D]
+              bg-gradient-to-r from-[#14b8a6] to-[#06b6d4]
               text-white text-lg font-bold 
               rounded-xl 
-              shadow-xl shadow-[#E07850]/30 
-              hover:shadow-2xl hover:shadow-[#E07850]/40 
+              shadow-xl shadow-[#14b8a6]/30 
+              hover:shadow-2xl hover:shadow-[#14b8a6]/40 
               transition-all
             "
           >

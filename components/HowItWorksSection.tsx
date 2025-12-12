@@ -10,7 +10,7 @@ const steps = [
     icon: MessageSquare,
     title: "Employees share",
     description:
-      "Team members text Coro, our AI assistant, anytime. No apps, no accounts — just natural conversation via SMS.",
+      "Team members text Coro anytime—before work, after hours, whenever they're ready. No apps to download. No accounts to create. Just natural conversation via SMS. Whether you have 50 employees or 5,000, every voice gets heard.",
   },
   {
     number: "02",
@@ -24,14 +24,14 @@ const steps = [
     icon: BarChart2,
     title: "Insights surface",
     description:
-      "AI synthesizes feedback into actionable intelligence. Sentiment trends, risk alerts, and cultural health scores — delivered in real time.",
+      "AI synthesizes feedback into actionable intelligence on your executive dashboard: • Sentiment trends by team, department, or location • Flight risk alerts for employees showing signs of disengagement • Culture health scores updated in real-time • Emerging issues surfaced before they become crises",
   },
   {
     number: "04",
     icon: CheckCircle,
     title: "Action taken",
     description:
-      "Leaders acknowledge issues, assign ownership, and close the loop. Employees see progress. Trust is rebuilt.",
+      "Leaders acknowledge issues, assign ownership, and close the loop. Employees see their concerns addressed. Trust rebuilds. Turnover drops. One prevented resignation pays for months of Coro.",
   },
 ]
 
@@ -59,7 +59,7 @@ export default function HowItWorksSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="block text-xs font-semibold text-[#E07850] uppercase tracking-widest mb-4 font-mono"
+            className="block text-xs font-semibold text-[#14b8a6] uppercase tracking-widest mb-4 font-mono"
           >
             HOW IT WORKS
           </motion.span>
@@ -72,9 +72,9 @@ export default function HowItWorksSection() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#202020] mb-4 leading-tight"
           >
-            AI Shouldn't Replace Conversations.
+            Whether You Have 100 Employees or 5,000,
             <br />
-            It Should Start Them.
+            Coro Handles Every Conversation Personally.
           </motion.h2>
 
           {/* Subheadline */}
@@ -85,8 +85,7 @@ export default function HowItWorksSection() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="text-xl text-[#666666]"
           >
-            From anonymous feedback to action loops that close—Coro doesn't just collect voices, it catalyzes real
-            dialogue.
+            From the first text to actionable insights to closed-loop follow-up—Coro scales what you can't: real conversations with everyone.
           </motion.p>
         </div>
 

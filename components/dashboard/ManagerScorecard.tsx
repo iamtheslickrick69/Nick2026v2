@@ -141,7 +141,7 @@ function ManagerScorecard() {
             <select
               value={sortBy}
               onChange={(e) => setSortBy(e.target.value as typeof sortBy)}
-              className="h-9 px-3 rounded-xl bg-[#F5F3F0] border-none text-sm text-[#202020] cursor-pointer focus:ring-2 focus:ring-[#E07850]/30 outline-none"
+              className="h-9 px-3 rounded-xl bg-[#F5F3F0] border-none text-sm text-[#202020] cursor-pointer focus:ring-2 focus:ring-[#14b8a6]/30 outline-none"
             >
               <option value="healthScore">Team Health</option>
               <option value="loopsClosed">Loop Closure</option>
@@ -332,7 +332,7 @@ function ManagerScorecard() {
 
                     {/* CTA */}
                     <div className="flex justify-end mt-4">
-                      <button className="px-4 py-2 rounded-xl bg-gradient-to-r from-[#E07850] to-[#C9643D] text-white text-sm font-medium flex items-center gap-2 hover:shadow-lg transition-all">
+                      <button className="px-4 py-2 rounded-xl bg-gradient-to-r from-[#14b8a6] to-[#06b6d4] text-white text-sm font-medium flex items-center gap-2 hover:shadow-lg transition-all">
                         View Full Profile
                         <ChevronRight size={14} />
                       </button>

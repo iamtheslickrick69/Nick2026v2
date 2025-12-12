@@ -48,6 +48,7 @@ export interface DepartmentHealth {
   employeeCount: number
   messageCount: number
   topConcerns: string[]
+  change: number
 }
 
 export interface CustomerSegmentHealth {
@@ -335,6 +336,7 @@ export const departmentHealth: DepartmentHealth[] = [
     employeeCount: 180,
     messageCount: 45,
     topConcerns: ["Project Alpha deadlines", "Standup meetings", "Work-life balance"],
+    change: -5,
   },
   {
     name: "Sales",
@@ -343,6 +345,7 @@ export const departmentHealth: DepartmentHealth[] = [
     employeeCount: 120,
     messageCount: 28,
     topConcerns: ["Quota transparency", "Lead quality", "Sales tools"],
+    change: 8,
   },
   {
     name: "Marketing",
@@ -351,6 +354,7 @@ export const departmentHealth: DepartmentHealth[] = [
     employeeCount: 45,
     messageCount: 12,
     topConcerns: ["Cross-functional communication", "Campaign budgets", "Headcount"],
+    change: 0,
   },
   {
     name: "Product",
@@ -359,6 +363,7 @@ export const departmentHealth: DepartmentHealth[] = [
     employeeCount: 65,
     messageCount: 18,
     topConcerns: ["Customer feedback loop", "Roadmap clarity", "Engineering bandwidth"],
+    change: 12,
   },
   {
     name: "Customer Success",
@@ -367,6 +372,7 @@ export const departmentHealth: DepartmentHealth[] = [
     employeeCount: 95,
     messageCount: 32,
     topConcerns: ["Manager behavior", "Escalation process", "Customer churn"],
+    change: -8,
   },
   {
     name: "HR",
@@ -375,6 +381,7 @@ export const departmentHealth: DepartmentHealth[] = [
     employeeCount: 25,
     messageCount: 8,
     topConcerns: ["Promotion criteria", "Onboarding process", "DEI initiatives"],
+    change: 6,
   },
 ]
 

@@ -63,7 +63,7 @@ export default function ActionEditorModal() {
       case "critical":
         return { bg: "bg-red-50", border: "border-red-500", text: "text-red-600", active: "bg-red-500" }
       case "high":
-        return { bg: "bg-orange-50", border: "border-orange-500", text: "text-orange-600", active: "bg-orange-500" }
+        return { bg: "bg-blue-50", border: "border-blue-500", text: "text-blue-600", active: "bg-blue-500" }
       case "medium":
         return { bg: "bg-yellow-50", border: "border-yellow-500", text: "text-yellow-600", active: "bg-yellow-500" }
       case "low":
@@ -209,7 +209,7 @@ export default function ActionEditorModal() {
                           className={`px-4 py-3 rounded-xl border-2 font-medium text-sm capitalize transition-all ${
                             isSelected
                               ? `${styles.border} ${styles.bg} ${styles.text}`
-                              : "border-[#E5E5E5] text-[#666666] hover:border-[#E07850]/30"
+                              : "border-[#E5E5E5] text-[#666666] hover:border-[#14b8a6]/30"
                           }`}
                         >
                           {p}
@@ -238,7 +238,7 @@ export default function ActionEditorModal() {
                           className={`px-4 py-3 rounded-xl border-2 font-medium text-sm transition-all flex items-center justify-center gap-2 ${
                             isSelected
                               ? "border-[#1B7F8E] bg-[#1B7F8E]/10 text-[#1B7F8E]"
-                              : "border-[#E5E5E5] text-[#666666] hover:border-[#E07850]/30"
+                              : "border-[#E5E5E5] text-[#666666] hover:border-[#14b8a6]/30"
                           }`}
                         >
                           {getStatusIcon(s.value)}

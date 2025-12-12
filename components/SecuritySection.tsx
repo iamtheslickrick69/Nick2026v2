@@ -8,13 +8,13 @@ const securityFeatures = [
     icon: Lock,
     title: "End-to-End Encryption",
     description: "All messages are encrypted in transit and at rest using AES-256 encryption standards.",
-    color: "#1B7F8E",
+    color: "#06b6d4",
   },
   {
     icon: Shield,
     title: "Anonymous by Design",
     description: "Employee identities are never linked to feedback. True anonymity builds trust.",
-    color: "#E07850",
+    color: "#14b8a6",
   },
   {
     icon: FileX,
@@ -26,26 +26,15 @@ const securityFeatures = [
     icon: Users,
     title: "Role-Based Access",
     description: "Granular permissions ensure only authorized personnel see relevant insights.",
-    color: "#1B7F8E",
+    color: "#06b6d4",
   },
 ]
 
 export function SecuritySection() {
   return (
-    <section className="relative py-16 px-6 md:px-8 overflow-hidden">
-      {/* Video Background */}
-      <video
-        autoPlay
-        loop
-        muted
-        playsInline
-        className="absolute inset-0 w-full h-full object-cover"
-      >
-        <source src="https://pub-7824dae2ffd24193b52760c54972be1d.r2.dev/111peachbaby.mp4" type="video/mp4" />
-      </video>
-
-      {/* 25% Dark Overlay */}
-      <div className="absolute inset-0 bg-black/25" />
+    <section className="relative py-16 px-6 md:px-8 overflow-hidden bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
+      {/* Teal-Blue gradient overlay for brand consistency */}
+      <div className="absolute inset-0 bg-gradient-to-br from-teal-900/20 via-cyan-900/10 to-blue-900/20" />
 
       <div className="relative max-w-6xl mx-auto">
         {/* Header */}
@@ -61,7 +50,7 @@ export function SecuritySection() {
             style={{
               fontFamily: "var(--font-geist-mono), monospace",
               background: "rgba(27, 127, 142, 0.1)",
-              color: "#1B7F8E",
+              color: "#06b6d4",
             }}
           >
             <Shield className="w-3.5 h-3.5" />
@@ -74,7 +63,7 @@ export function SecuritySection() {
           >
             Security That Earns
             <br />
-            <span style={{ color: "#E07850" }}>Employee Trust</span>
+            <span style={{ color: "#14b8a6" }}>Employee Trust</span>
           </h2>
 
           <p
@@ -150,7 +139,7 @@ export function SecuritySection() {
               className="w-12 h-12 rounded-full flex items-center justify-center"
               style={{ background: "rgba(27, 127, 142, 0.1)" }}
             >
-              <Shield className="w-6 h-6" style={{ color: "#1B7F8E" }} />
+              <Shield className="w-6 h-6" style={{ color: "#06b6d4" }} />
             </div>
             <div className="text-left">
               <p
@@ -175,7 +164,7 @@ export function SecuritySection() {
               className="w-12 h-12 rounded-full flex items-center justify-center"
               style={{ background: "rgba(224, 120, 80, 0.1)" }}
             >
-              <Lock className="w-6 h-6" style={{ color: "#E07850" }} />
+              <Lock className="w-6 h-6" style={{ color: "#14b8a6" }} />
             </div>
             <div className="text-left">
               <p

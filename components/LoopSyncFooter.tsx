@@ -58,14 +58,14 @@ export function LoopSyncFooter() {
               <motion.div
                 className="relative w-10 h-10 rounded-full overflow-hidden"
                 style={{
-                  background: "linear-gradient(135deg, #E07850, #1B7F8E, #06b6d4)",
+                  background: "linear-gradient(135deg, #14b8a6, #06b6d4, #3b82f6)",
                 }}
                 animate={{
                   background: [
-                    "linear-gradient(135deg, #E07850, #1B7F8E, #06b6d4)",
-                    "linear-gradient(225deg, #1B7F8E, #06b6d4, #E07850)",
-                    "linear-gradient(315deg, #06b6d4, #E07850, #1B7F8E)",
-                    "linear-gradient(135deg, #E07850, #1B7F8E, #06b6d4)",
+                    "linear-gradient(135deg, #14b8a6, #06b6d4, #3b82f6)",
+                    "linear-gradient(225deg, #06b6d4, #3b82f6, #14b8a6)",
+                    "linear-gradient(315deg, #3b82f6, #14b8a6, #06b6d4)",
+                    "linear-gradient(135deg, #14b8a6, #06b6d4, #3b82f6)",
                   ],
                 }}
                 transition={{ duration: 6, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
@@ -129,7 +129,7 @@ export function LoopSyncFooter() {
                 <li key={link.label}>
                   <a
                     href={link.href}
-                    className="text-sm transition-colors hover:text-[#E07850]"
+                    className="text-sm transition-colors hover:text-[#14b8a6]"
                     style={{ fontFamily: "var(--font-figtree), Figtree, sans-serif", color: "#666666" }}
                   >
                     {link.label}
@@ -157,7 +157,7 @@ export function LoopSyncFooter() {
                 <li key={link.label}>
                   <a
                     href={link.href}
-                    className="text-sm transition-colors hover:text-[#E07850]"
+                    className="text-sm transition-colors hover:text-[#14b8a6]"
                     style={{ fontFamily: "var(--font-figtree), Figtree, sans-serif", color: "#666666" }}
                   >
                     {link.label}
@@ -185,7 +185,7 @@ export function LoopSyncFooter() {
                 <li key={link.label}>
                   <a
                     href={link.href}
-                    className="text-sm transition-colors hover:text-[#E07850]"
+                    className="text-sm transition-colors hover:text-[#14b8a6]"
                     style={{ fontFamily: "var(--font-figtree), Figtree, sans-serif", color: "#666666" }}
                   >
                     {link.label}
@@ -211,21 +211,21 @@ export function LoopSyncFooter() {
           <div className="flex items-center gap-6">
             <a
               href="#"
-              className="text-sm transition-colors hover:text-[#E07850]"
+              className="text-sm transition-colors hover:text-[#14b8a6]"
               style={{ fontFamily: "var(--font-figtree), Figtree, sans-serif", color: "#666666" }}
             >
               Privacy
             </a>
             <a
               href="#"
-              className="text-sm transition-colors hover:text-[#E07850]"
+              className="text-sm transition-colors hover:text-[#14b8a6]"
               style={{ fontFamily: "var(--font-figtree), Figtree, sans-serif", color: "#666666" }}
             >
               Terms
             </a>
             <a
               href="#"
-              className="text-sm transition-colors hover:text-[#E07850]"
+              className="text-sm transition-colors hover:text-[#14b8a6]"
               style={{ fontFamily: "var(--font-figtree), Figtree, sans-serif", color: "#666666" }}
             >
               Cookies

@@ -9,13 +9,13 @@ const values = [
     icon: Shield,
     title: "Protection First",
     description: "Every feature is designed to protect employee privacy while surfacing critical insights.",
-    color: "#1B7F8E",
+    color: "#06b6d4",
   },
   {
     icon: Heart,
     title: "Genuine Care",
     description: "We believe healthy workplaces start with listening—really listening—to your people.",
-    color: "#E07850",
+    color: "#14b8a6",
   },
   {
     icon: Users,
@@ -68,7 +68,7 @@ export function FounderSection() {
             style={{
               fontFamily: "var(--font-geist-mono), monospace",
               background: "rgba(224, 120, 80, 0.2)",
-              color: "#E07850",
+              color: "#14b8a6",
             }}
           >
             <Heart className="w-3.5 h-3.5" />
@@ -81,7 +81,7 @@ export function FounderSection() {
           >
             Built by People Who
             <br />
-            <span style={{ color: "#E07850" }}>Understand the Problem</span>
+            <span style={{ color: "#14b8a6" }}>Understand the Problem</span>
           </h2>
         </motion.div>
 
@@ -105,7 +105,7 @@ export function FounderSection() {
               <motion.button
                 className="flex-shrink-0 w-16 h-16 rounded-full flex items-center justify-center"
                 style={{
-                  background: "linear-gradient(135deg, #E07850, #d96a42)",
+                  background: "linear-gradient(135deg, #14b8a6, #d96a42)",
                   boxShadow: "0 0 30px rgba(224, 120, 80, 0.4)",
                 }}
                 whileHover={{ scale: 1.05 }}
@@ -140,7 +140,7 @@ export function FounderSection() {
                 className="text-6xl font-bold"
                 style={{
                   fontFamily: "var(--font-figtree), Figtree, sans-serif",
-                  background: "linear-gradient(135deg, #E07850, #06b6d4)",
+                  background: "linear-gradient(135deg, #14b8a6, #06b6d4)",
                   WebkitBackgroundClip: "text",
                   WebkitTextFillColor: "transparent",
                 }}

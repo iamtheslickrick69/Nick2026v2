@@ -1,5 +1,5 @@
 import LoopSyncNavbar from "@/components/LoopSyncNavbar"
-import ProblemWakeUp from "@/components/ProblemWakeUp"
+import BeforeAfterHero from "@/components/BeforeAfterHero"
 import IPhoneDemoSection from "@/components/IPhoneDemoSection"
 import WhySMSSection from "@/components/WhySMSSection"
 import HowItWorksSection from "@/components/HowItWorksSection"
@@ -15,7 +15,7 @@ export default function Page() {
   return (
     <>
       <LoopSyncNavbar />
-      <ProblemWakeUp />
+      <BeforeAfterHero />
       <WhySMSSection />
       <IPhoneDemoSection />
       <HowItWorksSection />
